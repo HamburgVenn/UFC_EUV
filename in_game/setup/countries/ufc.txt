@@ -1,0 +1,7 @@
+﻿UFC = {
+	color = rgb { 245 245 183 }
+	color2 = rgb { 16 41 203 }
+
+	culture_definition = andalusi
+	religion_definition = sunni
+}

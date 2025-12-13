@@ -1,0 +1,19 @@
+UFC = {
+    pattern = "pattern_solid.dds"
+
+    color1 = "white"
+    color2 = "green"
+    color3 = "yellow"
+    color4 = "black"
+    color5 = "blue"
+    color6 = "red"
+    textured_emblem = {
+        texture = "te_UFC.dds"
+    }
+    # colored_emblem = {
+    #     texture = "UFC.dds"
+    #     color1 = color5
+    #     color2 = color6
+    #     instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }
+    # }
+}

@@ -1,0 +1,39 @@
+﻿namespace = flavor_ufc
+flavor_ufc.1 = { #Consulate of the Sea
+	type = country_event
+	title = flavor_ufc.1.title
+	desc = flavor_ufc.1.desc
+	historical_info = flavor_ufc.1.hist
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.4.1
+		to = 1337.5.1
+		monthly_chance = 100
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		character:gra_fatima_bint_al_ahmar_nasrid ?= { save_scope_as = target_character}
+	}
+
+	option = {
+		name = flavor_ufc.1.a
+		historical_option = yes
+		custom_tooltip = flavor_ufc.1.tt
+		scope:target_character = {
+			add_adm = 30
+			add_dip = 50
+			add_character_modifier = {
+				modifier = "ufc_modifier_fatima"
+				size = 1
+				days = -1
+			}
+		}
+	}
+}

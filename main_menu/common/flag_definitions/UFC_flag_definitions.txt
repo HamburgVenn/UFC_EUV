@@ -1,0 +1,35 @@
+﻿
+UFC = { # Granada
+	# GRA - Nasrid emirate
+	# GRA_spanish - Spanish kingdom after 1492
+
+	flag_definition = {
+		coa = GRA_spanish
+		priority = 10
+		trigger = {
+			coa_def_christian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = GRA_border_aragon
+		priority = 11
+		trigger = {
+			coa_def_christian_trigger = yes
+			coa_def_ARA_ensign_trigger = yes
+		}
+	}
+
+	flag_definition = {
+		coa = UFC
+		priority = 1
+	}
+
+	flag_definition = {
+		coa = GRA_spanish_border_castles
+		priority = 13
+		trigger = {
+			coa_def_christian_trigger = yes
+			coa_def_POR_ensign_trigger = yes
+		}
+	}
+}

@@ -1,0 +1,12 @@
+﻿{
+  "name" : "UFC",
+  "id" : "venn.ufc",
+  "version" : "0.1",
+  "game_id" : "eu5",
+  "picture" : null,
+  "supported_game_version" : "1.0.10",
+  "short_description" : "add a country UFC and its story",
+  "tags" : [ "Gameplay" ],
+  "relationships" : [ ],
+  "game_custom_data" : { }
+}

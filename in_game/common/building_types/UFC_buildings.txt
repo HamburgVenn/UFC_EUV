@@ -1,0 +1,168 @@
+﻿
+UFC_trade_post = {
+	is_foreign = yes
+	need_good_relation = yes
+	pop_type = burghers
+
+	category = trade_category
+
+	max_levels = hanseatic_kontor_max_level
+	employment_size = 0.3
+
+	rural_settlement = no
+	town = yes
+	city = yes
+
+	increase_per_level_cost = 0.5
+
+	country_potential = {
+		modifier:allows_ufc_federation_buildings = yes
+	}
+
+
+	build_time = trade_post_build_time
+
+	modifier = {
+		merchant_power_from_building = 1
+		building_owner_maritime_presence = 0.1
+		merchant_capacity_from_building = 0.33
+		local_production_efficiency = 0.05
+		local_raw_material_output = 0.1
+	}
+
+	unique_production_methods = {
+		UFC_trade_post_maintenance = {
+			lumber = 0.1
+			tools = 0.025
+			paper = 0.1
+
+			category = building_maintenance
+		}
+	}
+	construction_demand = kontor_construction
+}
+
+UFC_shipwright_guild = {
+	is_foreign = yes
+	#need_good_relation = yes
+
+	pop_type = burghers
+	max_levels = guild_max_level
+	category = military_category
+	country_potential = {
+		modifier:allows_ufc_federation_buildings = yes
+	}
+	location_potential = {
+		owner = c:GRA
+		is_port = yes
+	}
+	employment_size = 0.25
+	pop_size_created = dock_employment
+	town = yes
+	city = yes
+	build_time = medium_port_building_time
+	expensive = yes
+	possible_production_methods = {
+		port_building_maintenance
+	}
+	construction_demand = port_building_construction
+	modifier = {
+		max_ships_built_at_same_time = 1
+		sailors_to_building_owner = 0.01
+		can_build_ships_in_this_location = yes
+		harbor_suitability = 0.1
+	}
+}
+
+UFC_town_hall = {
+	is_foreign = yes
+	#need_good_relation = yes
+
+	pop_type = nobles
+
+	category = trade_category
+
+	max_levels = 3
+	employment_size = normal_noble_employment
+
+	rural_settlement = no
+	town = yes
+	city = yes
+
+	increase_per_level_cost = 0.5
+
+
+	expensive = yes
+
+	location_potential = {
+		this = c:UFC.capital
+	}
+
+	country_potential = {
+		modifier:allows_ufc_federation_buildings = yes
+	}
+
+	build_time = large_capital_build_time
+
+	capital_country_modifier = {
+		trade_efficiency = 0.05
+		global_crown_estate_power = 0.15
+		monthly_republican_tradition = 0.05
+	}
+	modifier = {
+		gold_to_building_owner = 1
+		sailors_to_building_owner = 0.005
+		merchant_capacity_from_building = 3
+	}
+	remove_if = {
+		owner = {
+			NOT = { country_type = building }
+		}
+	}
+
+	possible_production_methods = {
+		capital_administration_maintenance
+	}
+	construction_demand = capital_building_construction
+}
+
+UFC_recruitment_centre = {
+	is_foreign = yes
+	stronger_power_projection = no
+	pop_type = burghers
+
+	category = military_category
+
+	max_levels = 3
+	employment_size = 0.25
+
+	rural_settlement = no
+	town = yes
+	city = yes
+
+	ai_foreign_ignore_naval_range = yes
+
+	location_potential = {
+		owner = c:GRA
+	}
+
+	country_potential = {
+		modifier:allows_ufc_federation_buildings = yes
+	}
+
+	build_time = soldier_building
+
+	modifier = {
+		manpower_to_building_owner = 0.01
+		can_recruit_regiment_in_this_location = yes
+	}
+
+	possible_production_methods = {
+		estate_building_input
+	}
+
+	raw_modifier = {
+	}
+
+	construction_demand = early_soldier_building_construction
+}

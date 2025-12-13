@@ -1,0 +1,25 @@
+﻿UFC_merchant_federation = {
+    major = yes
+    government = republic
+
+    potential = {
+        has_or_had_tag = UFC
+        country_type = building
+    }
+
+    locked = {
+        country_type = building
+    }
+
+    country_modifier = {
+        cannot_be_subjugated = yes
+        allows_ufc_federation_buildings = yes
+        global_burghers_estate_power = -0.5
+        merchant_maintenance_cost = -0.25
+        building_upkeep_costs = -0.25
+        monthly_diplomats = 0.2
+        diplomatic_capacity = 2
+    }
+
+    years = 2
+}

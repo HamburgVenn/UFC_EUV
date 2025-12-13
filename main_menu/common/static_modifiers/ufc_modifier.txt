@@ -1,0 +1,6 @@
+﻿ufc_modifier_fatima = {
+	game_data = {
+		category = character
+	}
+	character_life_expectancy = 50	#So our guy does not die too fast
+}

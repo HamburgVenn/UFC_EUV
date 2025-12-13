@@ -1,0 +1,6 @@
+﻿allows_ufc_federation_buildings={
+	boolean = yes
+	game_data={
+		category = country
+	}
+}

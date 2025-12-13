@@ -1,0 +1,73 @@
+COUNTRIES = {
+    countries = {
+        UFC = {
+            type = building
+            starting_technology_level = 3
+            capital = malaga
+
+            country_rank = rank_county
+
+
+            include = "expl_muslim_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+
+            government = {
+                type = republic
+                heir_selection = oligarchic_elective
+                reforms = {
+                    merchant_republic
+                    UFC_merchant_federation
+                }
+                ruler = gra_fatima_bint_al_ahmar_nasrid
+                parliament = {
+                    parliament_type = estate_parliament
+                }
+                centralization_vs_decentralization = 20
+                aristocracy_vs_plutocracy = 70
+                serfdom_vs_free_subjects = 70
+                traditionalist_vs_innovative = 30
+                spiritualist_vs_humanist = 70
+                mercantilism_vs_free_trade = -95
+                belligerent_vs_conciliatory = 0
+                quality_vs_quantity = 0
+                offensive_vs_defensive = 50
+                land_vs_naval = 10
+                capital_economy_vs_traditional_economy = -80
+                individualism_vs_communalism = 30
+                outward_vs_inward = -95
+                mysticism_vs_jurisprudence = -5
+
+                privilege = {
+                    commercial_advisory_council
+                    building_rights
+                    trade_monopolies
+                    formal_guilds
+                }
+                laws = {
+                    administrative_system = decentralized_trade_federations
+                    cultural_traditions_law = maritime_society
+                    republican_foundation_law = republicanism_policy
+                    marriage_law = muslim_marriage
+                    heir_religion_law = heir_same_religion
+                    legal_code_law = traditional_law_policy
+                    maritime_law = shipwright_standard_regulation
+                    distribution_of_power_law = dop_favor_the_kontors
+                    education_masses_law = basic_religious_education
+                    immigration_law = open_borders_law
+                    mining_law = burghers_mining_law
+                    sharia_law = maliki_policy
+
+                }
+            }
+            court_language = maghrebi_dialect
+            religious_school = maliki_school
+
+            tolerated_cultures = {
+                sephardi
+            }
+        }
+    }
+}
