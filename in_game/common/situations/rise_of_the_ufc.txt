@@ -1,0 +1,85 @@
+﻿rise_of_the_ufc = {
+	monthly_spawn_chance = monthly_spawn_chance_unique
+	hint_tag = hint_rise_of_the_ufc
+	
+	can_start = {
+		current_date > 1337.4.1
+		current_date < 1350
+	}
+	
+	can_end = {
+		OR = {
+			current_age = age_3_discovery
+			custom_tooltip = {
+				text = ufc_custom_trigger_abudula_ummayad_rules
+				always = no
+			}
+			not = {
+				country_exists = c:UFC
+			}
+			c:UFC = {
+				is_during_bankruptcy = yes
+			}
+		}
+	}
+
+	visible = {
+		OR = {
+			OR = {
+				is_neighbor_of = c:UFC
+				is_rival_of = c:UFC
+				is_enemy_of = c:UFC
+				is_subject_or_below_of = c:UFC
+			}
+			has_presence_in = region:iberia_region
+			has_presence_in = region:maghreb_region
+			is_member_of_international_organization = international_organization:ufc_trade_association
+		}
+	}
+	
+
+	on_start = {
+		c:UFC = {
+			trigger_event_non_silently = flavor_ufc.2
+		}
+		set_variable = { name = rise_of_the_ufc_mission_progress value = 0 }
+	}
+
+	on_monthly = {
+		random_list =  {
+			93 = { }
+			4 = {
+			}
+			3 = {
+			}
+		}
+	}
+
+
+	on_ending = {
+	}
+
+	tooltip = {
+
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				has_owner = yes
+				has_building = building_type:UFC_trade_post
+			}
+			value = white
+		}
+	}
+	
+	legend_key = { 
+		desc = "UFC_trade_post"
+		color = white
+		require_color_on_map = yes
+	}
+
+	on_ended = {
+
+	}
+}

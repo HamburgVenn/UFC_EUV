@@ -43,8 +43,8 @@ COUNTRIES = {
                 privilege = {
                     commercial_advisory_council
                     building_rights
-                    trade_monopolies
                     formal_guilds
+                    guild_investments
                 }
                 laws = {
                     administrative_system = decentralized_trade_federations
@@ -59,7 +59,10 @@ COUNTRIES = {
                     immigration_law = open_borders_law
                     mining_law = burghers_mining_law
                     sharia_law = maliki_policy
-
+                    legal_code_law = civil_law_policy
+                    education_masses_law = basic_religious_education
+                    censorship = no_censorship
+                    distribution_of_power_law = dop_favor_the_burghers
                 }
             }
             court_language = maghrebi_dialect

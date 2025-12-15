@@ -19,7 +19,7 @@
         building_upkeep_costs = -0.25
         monthly_diplomats = 0.2
         diplomatic_capacity = 2
+        allowed_alliance = no
     }
-
     years = 2
 }

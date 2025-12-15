@@ -1,0 +1,118 @@
+﻿ufc_trade_association = {
+	has_target = no
+	unique = yes
+	expel_members_who_are_targets_of_other_members = no
+	disband_if_no_leader = no
+	show_leave_message = no
+
+	max_active_resolutions = 1
+
+	has_leader_country = yes
+	leader_title_key = "UFC_LEADER"
+	leader_type = country
+	leader = {
+		leader_country ?= {
+			ruler ?= {
+				add_to_list = leaders
+			}
+		}
+	}
+
+	opinion_bonus = 100
+	can_initiate_policy_votes = {
+		is_leader_of_international_organization = this
+	}
+	
+	can_declare_war = {
+		always = yes
+	}
+
+	create_visible_trigger = {
+		always = no
+	}
+
+	invite_visible_trigger = {
+		always = no
+	}
+
+	can_lead_trigger = {
+		this = c:UFC
+	}
+
+	can_join_trigger = {
+		is_neighbor_of_international_organization = scope:recipient
+	}
+	
+	can_leave_trigger = {
+		always = no
+	}
+	
+	auto_leave_trigger = {
+		always = no
+	}
+
+	auto_disband_trigger = {
+		always = no
+	}
+
+	on_joined = {
+		add_opinion = {
+			modifier = opinion_ufc_trade_association
+			target = c:UFC
+		}
+	}
+
+	on_left = {
+		remove_opinion = {
+			modifier = opinion_ufc_trade_association
+			target = c:UFC
+		}
+	}
+	
+	ai_desire_to_join = {
+	}
+
+	payments_implemented = {
+	}
+
+	special_statuses_implemented = {
+	}
+
+	monthly_effect = {
+		hidden_effect = {
+			#auto-join anyone who has their capital in the hre
+			every_international_organization_owned_location = {
+				limit = {
+					is_capital = yes
+					owner = {
+						not = { is_member_of_international_organization = root }
+						country_can_join_international_organization = root
+					}
+				}
+				root = {
+					add_country_to_international_organization = prev.owner
+				}
+			}
+		}
+	}
+
+	variables = {
+		merchant_fenderal_impact = {
+			format = "IMPERIAL_AUTHORITY_DISPLAY"
+			change_format = "VARIABLE_CHANGE_FORMAT"
+			min = 0
+			max = 100
+		}
+	}
+
+	tooltip = {
+
+	}
+	
+	ai_desire_to_allow_new_member = {
+
+	}
+
+	ai_issue_voting_bias = {
+	}
+}

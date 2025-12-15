@@ -5,11 +5,10 @@ flavor_ufc.1 = { #Consulate of the Sea
 	desc = flavor_ufc.1.desc
 	historical_info = flavor_ufc.1.hist
 	fire_only_once = yes
-
 	dynamic_historical_event = {
 		tag = UFC
-		from = 1337.4.1
-		to = 1337.5.1
+		from = 1337.3.1
+		to = 1337.6.1
 		monthly_chance = 100
 	}
 
@@ -29,11 +28,29 @@ flavor_ufc.1 = { #Consulate of the Sea
 		scope:target_character = {
 			add_adm = 30
 			add_dip = 50
-			add_character_modifier = {
-				modifier = "ufc_modifier_fatima"
-				size = 1
-				days = -1
+		}
+		show_as_tooltip = {
+			scope:target_character = {
+				add_character_modifier = {
+					modifier = "ufc_modifier_fatima"
+					size = 1
+					days = -1
+				}
 			}
 		}
+	}
+}
+
+flavor_ufc.2 = {
+	hide_portraits = yes
+	type = country_event
+	category = situation_event
+	title = flavor_ufc.2.title
+	image = "gfx/interface/illustrations/situation/columbian_exchange.dds"
+	desc = flavor_ufc.2.desc
+	option = {
+		name = flavor_ufc.2.a
+		add_gold = 1
+		custom_tooltip = flavor_ufc.2.a.tt
 	}
 }

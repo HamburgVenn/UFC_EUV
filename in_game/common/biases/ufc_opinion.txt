@@ -1,0 +1,7 @@
+﻿#Starting opinions
+opinion_ufc_trade_association = {
+	value = 100
+	add = var:merchant_fenderal_impact
+	max = 200
+	min = 100
+}

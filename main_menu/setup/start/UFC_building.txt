@@ -1,11 +1,12 @@
 building_manager = {
     UFC_trade_post = { tag = UFC level = 1 location = granada }
-    UFC_trade_post = { tag = UFC level = 1 location = genoa } #1233
-    UFC_trade_post = { tag = UFC level = 1 location = tunis } #1253
-    UFC_trade_post = { tag = UFC level = 1 location = alexandria } #1264
-    UFC_trade_post = { tag = UFC level = 1 location = pisa } #1279
-    UFC_trade_post = { tag = UFC level = 1 location = bejaia } #1281
+    UFC_trade_post = { tag = UFC level = 1 location = malaga }
+    UFC_trade_post = { tag = UFC level = 1 location = genoa }
+    UFC_trade_post = { tag = UFC level = 1 location = tunis }
     UFC_trade_post = { tag = UFC level = 1 location = almeria }
+    UFC_trade_post = { tag = UFC level = 1 location = valencia }
+    UFC_trade_post = { tag = UFC level = 1 location = sevilla }
+    UFC_trade_post = { tag = UFC level = 1 location = cordoba }
     UFC_town_hall = { tag = UFC level = 1 location = malaga }
     UFC_shipwright_guild = { tag = UFC level = 1 location = malaga }
 }

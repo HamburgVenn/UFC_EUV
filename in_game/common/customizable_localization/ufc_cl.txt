@@ -1,0 +1,73 @@
+﻿INJECT:country_flavor = {
+	type = country
+
+	text = {
+		localization_key = country_rank_ufc_federation
+		trigger = {
+			tag = UFC
+			government_type = government_type:republic
+		}
+	}
+}
+
+INJECT:country_flavor_parliament = {
+	type = country
+	text = {
+		localization_key = country_flavor_parliament_ufc_parliament_stage1
+		trigger = {
+			tag = UFC
+		}
+	}
+}
+
+INJECT:character_title_suffix = {
+	type = character
+	text = {
+		localization_key = character_title_ufc_merchant_federation
+
+		trigger = {
+			is_ruler = yes
+			owner ?= {
+				tag = UFC
+				has_reform = government_reform:UFC_merchant_federation
+			}
+		}
+	}
+}
+
+INJECT:country_name_construction = {
+	type = country
+	text = {
+		localization_key = country_name_construction_name
+		trigger = {
+			OR = {
+				AND = {
+					tag = UFC
+					has_reform = government_reform:UFC_merchant_federation
+				}
+			}
+		}
+	}
+}
+
+INJECT:country_ru_flavor = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = country_rank_ufc_federation
+		trigger = {
+			tag = UFC
+		}
+	}
+}
+
+INJECT:country_ru_flavor_parliament = {
+	type = country
+	log_loc_errors = no
+	text = {
+		localization_key = country_flavor_parliament_ufc_parliament_stage1
+		trigger = {
+			tag = UFC
+		}
+	}
+}

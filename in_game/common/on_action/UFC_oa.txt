@@ -1,1 +1,17 @@
-﻿
+﻿on_game_start = {
+    on_actions = {
+        UFC_on_game_start
+    }
+}
+
+UFC_on_game_start = {
+    effect = {
+        character:gra_fatima_bint_al_ahmar_nasrid ?= {
+            add_character_modifier = {
+                modifier = "ufc_modifier_fatima"
+                size = 1
+                days = -1
+            }
+        }
+    }
+}

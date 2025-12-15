@@ -1,0 +1,18 @@
+international_organization_manager = {
+	add_international_organization = {
+		type = ufc_trade_association
+		creation_date = 1334.1.1
+
+		map_color = rgb { 255 248 233 }
+
+		members = { UFC GRA CAS ARA POR MOR TLE TUN NAV GEN }
+		leader = UFC
+
+		laws = {
+		}
+		ruler_term = { character = gra_fatima_bint_al_ahmar_nasrid start_date = 1334.1.1 }
+		variables = {
+			merchant_fenderal_impact = 10
+		}
+	}
+}
