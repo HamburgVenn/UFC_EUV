@@ -41,8 +41,22 @@
 	on_start = {
 		c:UFC = {
 			trigger_event_non_silently = flavor_ufc.2
+			set_variable = { name = rise_of_the_ufc_mission_progress value = 0.00 }
 		}
-		set_variable = { name = rise_of_the_ufc_mission_progress value = 0 }
+		root = {
+			set_variable = {
+				name = rise_of_the_ufc_mission_counting
+				value = flag:UFC_SITUATION_MISSION_1
+			}
+			set_variable = {
+				name = rise_of_the_ufc_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_1_TT
+			}
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting_0
+				value = flag:UFC_SITUATION_SECONDARY_MISSION_0
+			}
+		}
 	}
 
 	on_monthly = {
@@ -53,6 +67,17 @@
 			3 = {
 			}
 		}
+		if = {
+			limit = {
+				situation:hundred_years_war = {
+					situation_is_active = yes
+				}
+			}
+			c:UFC = {
+				trigger_event_non_silently = ufc_situations.1000
+			}
+		}
+
 	}
 
 
@@ -62,7 +87,7 @@
 	tooltip = {
 
 	}
-
+	is_data_map = yes
 	map_color = {
 		if = {
 			limit = {
@@ -80,6 +105,6 @@
 	}
 
 	on_ended = {
-
+		set_situation_end_flag_effect = { situation = rise_of_the_ufc }
 	}
 }

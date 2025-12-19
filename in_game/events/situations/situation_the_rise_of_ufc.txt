@@ -1,0 +1,45 @@
+﻿namespace = ufc_situations
+ufc_situations.1000 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1000.title
+	desc = ufc_situations.1000.desc
+	fire_only_once = yes
+
+	image = "gfx/interface/illustrations/situation/hundred_years_war.dds"
+	immediate = {
+	}
+
+	option = {
+		name = ufc_situations.1000.a
+		custom_tooltip = ufc_situations.1000.tt
+		change_variable = {
+			name = rise_of_the_ufc_secondary_mission_counting_0
+			value = flag:UFC_SITUATION_SECONDARY_MISSION_1
+		}
+	}
+}
+
+ufc_situations.1100 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1100.title
+	desc = ufc_situations.1100.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1100.a
+		custom_tooltip = ufc_situations.1000.tt
+		change_variable = {
+			name = rise_of_the_ufc_mission_counting
+			value = flag:UFC_SITUATION_MISSION_2
+		}
+	}
+}

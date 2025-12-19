@@ -20,6 +20,7 @@
         monthly_diplomats = 0.2
         diplomatic_capacity = 2
         allowed_alliance = no
+        government_reform_slots = 1
     }
     years = 2
 }

@@ -1,0 +1,49 @@
+﻿ufc_gra_payment = { #Tribute from everyone to the Tax Collector
+	get_payer_list = {
+		every_country = {
+			limit = {
+				tag = UFC
+				tag_exists = UFC
+			}
+			add_to_local_variable_list = {
+				name = payers
+				target = this
+			}
+		}
+	}
+	get_payee_list = {
+		every_country = {
+			limit = {
+				tag = GRA
+				tag_exists = GRA
+			}
+			add_to_local_variable_list = {
+				name = payees
+				target = this
+			}
+		}
+	}
+	price = ufc_gra_price
+	uses_maintenance = yes
+	price_multiplier = {
+		add = {
+			desc = "TATAR_YOKE_CONTRIBUTION_PAYMENT_MULTIPLIER"
+			every_international_organization_member = {
+				add = monthly_income_trade_and_tax
+			}
+			multiply = 0.01
+		}
+	}
+	proportion_for_payer = {
+		add = {
+			desc = "ufc_gra_price"
+			value = monthly_income_trade_and_tax
+		}
+	}
+	proportion_for_payee = {
+		add = {
+			desc = "ufc_gra_price"
+			value = 1
+		}
+	}
+}

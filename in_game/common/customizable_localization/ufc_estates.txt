@@ -1,6 +1,11 @@
 ﻿TRY_REPLACE:crown_estate = {
 	type = country
-
+	text = {
+		localization_key = crown_estate_ufc_merchant_federation
+		trigger = {
+			has_reform = government_reform:UFC_merchant_federation
+		}
+	}
 	text = {
 		localization_key = crown_estate_holy_order
 		trigger = {
@@ -52,13 +57,6 @@
 	}
 
 	text = {
-		localization_key = crown_estate_ufc_merchant_federation
-		trigger = {
-			has_reform = government_reform:UFC_merchant_federation
-		}
-	}
-
-	text = {
 		localization_key = crown_estate
 		fallback = yes
 	}
@@ -67,7 +65,12 @@
 
 TRY_REPLACE:nobles_estate = {
 	type = country
-
+	text = {
+		localization_key = noble_estate_ufc_merchant_federation
+		trigger = {
+			has_reform = government_reform:UFC_merchant_federation
+		}
+	}
 	text = {
 		localization_key = nobles_estate_holy_order
 		trigger = {
@@ -372,13 +375,6 @@ TRY_REPLACE:nobles_estate = {
 	}
 
 	text = {
-		localization_key = noble_estate_ufc_merchant_federation
-		trigger = {
-			has_reform = government_reform:UFC_merchant_federation
-		}
-	}
-
-	text = {
 		localization_key = nobles_estate
 		fallback = yes
 	}
@@ -386,7 +382,12 @@ TRY_REPLACE:nobles_estate = {
 
 TRY_REPLACE:burghers_estate = {
 	type = country
-
+	text = {
+		localization_key = burghers_estate_ufc_merchant_federation
+		trigger = {
+			has_reform = government_reform:UFC_merchant_federation
+		}
+	}
 	text = {
 		localization_key = burghers_estate_greek
 		trigger = {
@@ -578,13 +579,6 @@ TRY_REPLACE:burghers_estate = {
 		localization_key = burghers_estate_burgerij
 		trigger = {
 			culture.dialect = dialect:dutch_dialect
-		}
-	}
-
-	text = {
-		localization_key = burghers_estate_ufc_merchant_federation
-		trigger = {
-			has_reform = government_reform:UFC_merchant_federation
 		}
 	}
 

@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
- UFC:"联合果品商会"
- UFC_ADJ: "联合果品商会"
+ UFC:"联合果品"
+ UFC_ADJ: "联合果品"
  UFC_merchant_federation: "联合果品商贸联盟"
  UFC_merchant_federation_desc: "在伊比利亚半岛的南端，安达卢西亚的余晖倾撒在格拉纳达埃米尔国的宫墙之上。这里物产丰富，气候宜人，勤勉而精明的穆斯林商人们倒腾着地中海南北两岸的奇珍异宝：海鱼，丝绸，蔗糖甚至是龙涎香，但其中最值得一提的是橄榄和无花果，至少这些果品是平民可堪一品的珍馐。\n联合果品贸易联盟就是在这样的条件下诞生的，来往的有格拉纳达本地的商人，亦有来自摩洛哥与突尼斯的行商，甚至有着卡斯蒂利亚与热那亚的基督徒。当东方的宗教战争剑拔弩张之时，格拉纳达埃米尔国奉行的亲善外交政策使得这里成为两大世界得以交流的最完美的避风港。\n然而，只需要蝴蝶略扇翅膀的一瞬，那来自北方的风暴随时都可能席卷这里——又或者，是来自西边大海上的暖流，率先为这里带来新的甘霖？"
  MODIFIER_TYPE_NAME_allows_ufc_federation_buildings: "允许联合果品公司专属建筑"
@@ -8,8 +8,8 @@
  country_flavor_parliament_ufc_parliament_stage1: "商会董事会会议"
  country_rank_ufc_federation: "商会"
  crown_estate_ufc_merchant_federation: "商会"
- noble_estate_ufc_merchant_federation: "行政员"
- burghers_estate_ufc_merchant_federation: "商人团"
+ noble_estate_ufc_merchant_federation: "行政专员"
+ burghers_estate_ufc_merchant_federation: "商团"
  character_title_ufc_merchant_federation: "商会首领"
  UFC_town_hall:0 "联合果品商会大厅"
  UFC_town_hall_desc:0 "联合果品商会的总部坐落马拉加城堡内集市的边沿。每当夕阳渐渐划过马拉加山脉，沉于西边一望无际的大海时，那些从港口、格拉纳达和阿尔梅里亚归来的车队便陆续回到这个货物与账目的集散地。\n劳累了一天的商人们都心知肚明的是，虽然马拉加的集市熙熙攘攘，但无论如何都无法与格拉纳达城市的宏伟建筑群相媲美。然而华美的宫殿与贵族生活不是这群忙碌的商人们目前需要考虑的问题，奈斯尔王室可以收取微薄是商会贸易税，但他们必须保证这份蛋糕永远不会被少数人所享用。当一位平民走投无路时，联合果品商会永远是他赖以生存的最后的救命稻草。\n\n这里鱼龙混杂，这里包罗万象。"
@@ -33,6 +33,11 @@
  merchant_fenderal_impact_desc:0 "贸易影响力是联合果品商会对于维持贸易体系的掌控能力。作为伊斯兰世界与基督徒文明之间的中间商，我们必须如履薄冰，谨慎地对待每一项贸易政策。——毕竟，来自任何一方的官方明令的禁运都会使商会的赤字雪上加霜。"
  UFC_LEADER:0 "联合果品商会领袖"
  opinion_ufc_trade_association:0 "联合果品商会贸易圈"
+ ufc_gra_payment:0 "阿尔罕布拉宫税款"
+ ufc_gra_payment_desc:0 "联合果品商会的第一桶金来自阿尔罕布拉宫，但不能每一桶金都送去阿尔罕布拉宫。我们必须尽快说服法蒂玛太皇太后缩减奈斯尔王室从商会利润中攫取的大部分资金。只有资本再投入才能保证商会的繁荣。"
+ ufc_gra_price:0 "阿尔罕布拉宫税款"
+
+
  rise_of_the_ufc:0 "白手起家"
  rise_of_the_ufc_desc:0 "他生于一枚杜卡特，却又因一枚杜卡特而死。\n联合果品商会起源于奈斯尔王室的法蒂玛与商队的长期合作。她漫长的一生中曾三次将自己的子孙送上格拉纳达埃米尔国的王位，期间操办典礼仪仗，多是最为心腹的商队首领们出力。为了满足各个市场里王室、贵族以及市民的需求，来自格拉纳达、非斯、热那亚甚至是塞维利亚的商人团们之间建立了长期的合作关系，由此打下了坚实的信任基础。纵使再征服运动和伊比利亚诸王之间的冲突不断，商会内部总能保持一种微妙的平衡。\n\n天下并非国王与埃米尔之天下，而是天下人的天下。"
  hint_rise_of_the_ufc:0 "[GetSituationByKey('rise_of_the_ufc').GetNameWithNoTooltip] 提示"
@@ -43,4 +48,27 @@
  flavor_ufc.2.a:0 "生命，自会找到出路。"
  flavor_ufc.2.a.tt:0 "拿上属于你的那枚金币，商船就要启航了！\n开启局势：[GetSituationByKey('rise_of_the_ufc').GetNameWithNoTooltip]"
  UFC_situation_rise_of_ufc_mission_progress:0 "白手起家局势任务进度"
+ UFC_SITUATION_CURRENT_MISSION_ONE_TT:0 "主要事变："
+ UFC_SITUATION_MISSION_1:0 "扩建贸易站"
+ UFC_SITUATION_MISSION_1_TT:0 "当满足以下任务条件时触发事件：\n境外拥有超过10个商会贸易站。"
+ UFC_SITUATION_MISSION_2:0 "松弛枷锁"
+ UFC_SITUATION_MISSION_2_TT:0 "我们需要在接下来的事件中说服法蒂玛太皇太后缩减对阿尔罕布拉宫的税金。"
+ UFC_SITUATION_CURRENT_MISSION_TWO_TT:0 "次要事变："
+ UFC_SITUATION_CURRENT_MISSION_THREE_TT:0 "阶段任务"
+ UFC_MISSION_TEST_TT:0 "当前任务：建造10艘舰船"
+ UFC_MISSION_TEST_FLAVOR_TT:0 "海运总得有船吧！"
+
+
+
+
+ ufc_situations.1000.title:0 "次要事变:百年战争"
+ ufc_situations.1000.desc:0 "伊比利亚半岛上从来不缺乏从北方传来的小道消息：英格兰王国与法兰西王国之间的矛盾一触即发。当金雀花王朝贪婪地觊觎着法国王位的同时，卡佩-瓦卢瓦王朝就阿基坦地区和低地地区的主导权更是寸步不让。\n\n近日，弗兰德地区的羊毛贸易燃起了整个炸药桶的第一星火花。英王试图通过对弗兰德公国禁运羊毛和粮食来改变其对法王的效忠，而迫于羊毛需求导致的叛乱，弗兰德伯爵宣布中立。至此，双方剑拔弩张的态势已经让整个西欧地区的各个势力蠢蠢欲动。\n\n根据坊间传言与宫廷消息，[c:CAS.GetName]倾向于支持法兰西势力，而[c:POR.GetName]则是英王的铁杆盟友，但至少目前看来这场战火尚且烧不到伊比利亚半岛上来。如果联合果品商会希望在这场不可避免的冲突中攫取微薄的利益，我们应该马上做出行动应对这场一本万利的赌局。\n\n若非我们的商船开不到那里，弗兰德斯能被一捆羊毛压倒吗？"
+ ufc_situations.1000.a:0 "白花花的羊毛说不卖就不卖了，作孽！"
+ UFC_SITUATION_SECONDARY_MISSION_0:0 "次要事变：无"
+ ufc_situations.1000.tt:0 "我们将尽可能地在百年战争中浑水摸鱼。在波尔多等城市建立贸易站，挑拨伊比利亚诸邦的关系，甚至在英法两国之间下注，直至获得获胜方的贸易最惠国待遇，将贸易之手伸向英吉利海峡。"
+ UFC_SITUATION_SECONDARY_MISSION_1:0 "次要事变：百年战争"
+ ufc_situations.1100.title:0 "主要事变:松弛枷锁"
+ ufc_situations.1100.desc:0 "联合果品商会的第一桶金来自阿尔罕布拉宫，但不能每一桶金都送去阿尔罕布拉宫。\n\n法蒂玛太皇太后的心中总是惦记着她那可爱的孙子，虽然她本人生活勤俭，但奈斯尔王室对商会的掌控力仍然使得大量的利润流向了繁复奢靡的宫廷生活中。联合果品商会的商团们对此颇为不满，我们必须设法说服法蒂玛太皇太后，将资本放在它最应该存在的地方。如果我们不能将一枚杜卡特变成两枚，那么商会将迎来它的慢性死亡。"
+ ufc_situations.1100.a:0 "至少，我们等不起太皇太后去见真主的那一天。"
+
 

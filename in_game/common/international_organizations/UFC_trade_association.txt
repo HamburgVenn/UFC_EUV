@@ -73,6 +73,7 @@
 	}
 
 	payments_implemented = {
+		ufc_gra_payment
 	}
 
 	special_statuses_implemented = {
