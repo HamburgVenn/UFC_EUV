@@ -54,3 +54,66 @@ flavor_ufc.2 = {
 		custom_tooltip = flavor_ufc.2.a.tt
 	}
 }
+
+flavor_ufc.3 = { #Consulate of the Sea
+	type = country_event
+	title = flavor_ufc.3.title
+	desc = flavor_ufc.3.desc
+	historical_info = flavor_ufc.3.hist
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1338.1.1
+		to = 1340.6.1
+		monthly_chance = 30
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		create_character = {
+			first_name = name_abu
+			last_name = "ULLAR"
+			adm = 42
+			dip = 23
+			mil = 87
+			culture = culture:moroccan
+			birth_location = location:fez
+			religion = religion:sunni
+			birth_date = 1295.1.1
+			estate = estate_type:nobles_estate
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = flavor_ufc.3.a
+		custom_tooltip = flavor_ufc.3.a.tt
+		capital = {
+			construct_building = {
+				building_type = building_type:UFC_recruitment_centre
+				instant = yes
+				owner = c:UFC
+				payer = c:UFC
+			}
+		}
+		scope:target_character = {
+			move_country = c:UFC
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = 0.1
+			}
+		}
+		add_army_tradition = army_tradition_extreme_bonus
+	}
+
+	option = {
+		name = flavor_ufc.3.b
+		custom_tooltip = flavor_ufc.3.b.tt
+	}
+}

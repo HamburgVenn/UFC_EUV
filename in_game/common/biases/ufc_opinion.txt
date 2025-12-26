@@ -1,7 +1,17 @@
 ﻿#Starting opinions
 opinion_ufc_trade_association = {
 	value = 100
-	add = var:merchant_fenderal_impact
-	max = 200
-	min = 100
+	add = {
+		value = international_organization:ufc_trade_association.var:merchant_fenderal_impact
+	}
+}
+
+opinion_ufc_unsatisfied = {
+	value = -25
+	yearly_decay = 1
+}
+
+opinion_ufc_satisfied = {
+	value = 25
+	yearly_decay = -1
 }

@@ -69,6 +69,20 @@
 		}
 		if = {
 			limit = {
+				international_organization:ufc_trade_association = {
+					not = {
+						has_variable = ufc_gra_payment_multiplier
+					}
+				}
+			}
+			c:UFC = {
+				trigger_event_non_silently = ufc_situations.1100
+			}
+		}
+
+
+		if = {
+			limit = {
 				situation:hundred_years_war = {
 					situation_is_active = yes
 				}

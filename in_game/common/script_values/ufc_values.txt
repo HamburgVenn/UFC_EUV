@@ -1,0 +1,8 @@
+﻿ufc_gra_payment_multiplier_sv = {
+	value = 0.5
+	multiply = {
+		value = international_organization:ufc_trade_association.var:ufc_gra_payment_multiplier
+	}
+	min = 0
+	max = 1
+}

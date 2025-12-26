@@ -26,12 +26,11 @@
 	price = ufc_gra_price
 	uses_maintenance = yes
 	price_multiplier = {
-		add = {
-			desc = "TATAR_YOKE_CONTRIBUTION_PAYMENT_MULTIPLIER"
-			every_international_organization_member = {
-				add = monthly_income_trade_and_tax
+		c:UFC = {
+			add = monthly_income_trade_and_tax
+			multiply = {
+				value = ufc_gra_payment_multiplier_sv
 			}
-			multiply = 0.01
 		}
 	}
 	proportion_for_payer = {

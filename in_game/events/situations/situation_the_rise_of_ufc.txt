@@ -31,15 +31,133 @@ ufc_situations.1100 = { #Consulate of the Sea
 	}
 
 	immediate = {
-
+		international_organization:ufc_trade_association = {
+			set_variable = { name = ufc_gra_payment_multiplier value = 1}
+		}
 	}
 
 	option = {
 		name = ufc_situations.1100.a
-		custom_tooltip = ufc_situations.1000.tt
+		custom_tooltip = ufc_situations.1100.tt
 		change_variable = {
 			name = rise_of_the_ufc_mission_counting
 			value = flag:UFC_SITUATION_MISSION_2
+		}
+	}
+}
+
+ufc_situations.1105 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1105.title
+	desc = ufc_situations.1105.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1339.1.1
+		to = 1339.3.1
+		monthly_chance = 100
+	}
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		create_character = {
+			dynasty = dynasty:nasrid_dynasty
+			first_name = name_muhammad
+			last_name = "nasrid_dynasty"
+			adm = 0
+			dip = 0
+			mil = 0
+			culture = culture:andalusi
+			birth_location = location:granada
+			religion = religion:sunni
+			birth_date = 1339.1.4
+			estate = estate_type:crown_estate
+			father = character:gra_yusuf_i_nasrid
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.1105.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -6
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.1
+			}
+		}
+		custom_tooltip = ufc_situations.1105.a.tt
+	}
+
+	option = {
+		name = ufc_situations.1105.b
+		add_inflation = -0.01
+	}
+}
+
+ufc_situations.1110 = {
+	#Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1110.title
+	desc = ufc_situations.1110.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1338.2.1
+		to = 1348.2.1
+		monthly_chance = 33
+	}
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+	option = {
+		name = ufc_situations.1110.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -3
+		}
+		create_market = {
+			builder = c:GRA
+			location = location:malaga
+			price = price:create_market
+			instant = no
+			price_modifier = 0
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = -5
+			}
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.1
+			}
+		}
+		custom_tooltip = ufc_situations.1110.a.tt
+		c:MOR = {
+			add_opinion = {
+				modifier = opinion_ufc_unsatisfied
+				target = c:UFC
+			}
+		}
+	}
+
+	option = {
+		name = ufc_situations.1110.b
+		c:MOR = {
+			add_opinion = {
+				modifier = opinion_ufc_satisfied
+				target = c:UFC
+			}
 		}
 	}
 }

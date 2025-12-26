@@ -22,7 +22,9 @@
 	can_initiate_policy_votes = {
 		is_leader_of_international_organization = this
 	}
-	
+	on_creation = {
+		set_variable = { name = ufc_gra_payment_multiplier value = 1}
+	}
 	can_declare_war = {
 		always = yes
 	}
@@ -77,9 +79,11 @@
 	}
 
 	special_statuses_implemented = {
+		ufc_gra_payment_payee
 	}
 
 	monthly_effect = {
+
 		hidden_effect = {
 			#auto-join anyone who has their capital in the hre
 			every_international_organization_owned_location = {

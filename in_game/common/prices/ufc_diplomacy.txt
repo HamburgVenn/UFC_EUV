@@ -1,4 +1,4 @@
 ﻿ufc_gra_price = {
-	scaled_gold = 0.5
-	ignore_inflation = yes
+	gold = 1
 }
+
