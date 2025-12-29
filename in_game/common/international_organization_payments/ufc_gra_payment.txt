@@ -24,7 +24,7 @@
 		}
 	}
 	price = ufc_gra_price
-	uses_maintenance = yes
+	uses_maintenance = no
 	price_multiplier = {
 		c:UFC = {
 			add = monthly_income_trade_and_tax

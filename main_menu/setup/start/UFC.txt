@@ -49,7 +49,7 @@ COUNTRIES = {
                 laws = {
                     administrative_system = decentralized_trade_federations
                     cultural_traditions_law = maritime_society
-                    republican_foundation_law = republicanism_policy
+                    republican_foundation_law = meritocratic_rule_policy
                     marriage_law = muslim_marriage
                     heir_religion_law = heir_same_religion
                     legal_code_law = traditional_law_policy
@@ -67,7 +67,6 @@ COUNTRIES = {
             }
             court_language = maghrebi_dialect
             religious_school = maliki_school
-
             tolerated_cultures = {
                 sephardi
             }

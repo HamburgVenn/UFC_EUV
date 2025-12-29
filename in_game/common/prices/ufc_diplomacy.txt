@@ -1,4 +1,6 @@
 ﻿ufc_gra_price = {
-	gold = 1
+	scaled_gold = 1
+	min_scale = 1
+	max_scale = 1
 }
 

@@ -1,0 +1,70 @@
+﻿ufc_se_refresh_random_mission = {
+	custom_tooltip = new_child_for_ruler
+	hidden_effect = {
+		situation:rise_of_the_ufc = {
+			random_list = {
+				1 = {
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting
+						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_TRADE_PORT
+					}
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_TRADE_PORT_TT
+					}
+				}
+				1 = {
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting
+						value = flag:UFC_SITUATION_MISSION_RANDOM_ENLARGE_IO
+					}
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+						value = flag:UFC_SITUATION_MISSION_RANDOM_ENLARGE_IO_TT
+					}
+				}
+				1 = {
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting
+						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_SHIPYARD
+					}
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_SHIPYARD_TT
+					}
+				}
+			}
+		}
+	}
+}
+
+ufc_se_effect_random_mission = {
+	c:UFC = {
+		random_list = {
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.1
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.2
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.3
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.4
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.5
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.6
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.7
+			}
+			1 = {
+				trigger_event_non_silently = ufc_random_mission.8
+			}
+		}
+	}
+}

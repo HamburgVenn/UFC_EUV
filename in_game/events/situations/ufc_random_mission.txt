@@ -1,0 +1,161 @@
+﻿namespace = ufc_random_mission
+ufc_random_mission.1 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.1.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_republican_tradition = 10
+	}
+}
+
+ufc_random_mission.2 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.2.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_stability = 10
+	}
+}
+
+ufc_random_mission.3 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.3.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_gold = {
+			value = root.local_var:ufc_var_current_income
+			multiply = 3
+		}
+	}
+	after = {
+
+	}
+}
+
+ufc_random_mission.4 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.4.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_country_modifier = {
+			modifier = consolidated_trade_modifier
+			years = 1
+		}
+	}
+}
+
+ufc_random_mission.5 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.5.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_army_tradition = army_tradition_severe_bonus
+	}
+}
+
+ufc_random_mission.6 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.6.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_army_tradition = navy_tradition_severe_bonus
+	}
+}
+
+ufc_random_mission.7 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.7.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		ruler = {
+			random_list = {
+				1 = {
+					add_adm = 10
+				}
+				1 = {
+					add_dip = 10
+				}
+				1 = {
+					add_mil = 10
+				}
+			}
+		}
+	}
+}
+
+ufc_random_mission.8 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_random_mission.1.title
+	desc = ufc_random_mission.8.desc
+	illustration_tags = {
+		10 = happy
+	}
+	immediate = {
+
+	}
+	option = {
+		name = ufc_random_mission.1.a
+		custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
+		add_country_modifier = {
+			modifier = ufc_modifier_medium_cabinet_efficiency
+			years = 1
+		}
+	}
+}
+

@@ -18,7 +18,6 @@
         merchant_maintenance_cost = -0.25
         building_upkeep_costs = -0.25
         monthly_diplomats = 0.2
-        diplomatic_capacity = 2
         allowed_alliance = no
         government_reform_slots = 1
     }

@@ -7,6 +7,16 @@ ufc_situations.1000 = { #Consulate of the Sea
 
 	image = "gfx/interface/illustrations/situation/hundred_years_war.dds"
 	immediate = {
+		situation:rise_of_the_ufc = {
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting
+				value = flag:UFC_SITUATION_MISSION_2
+			}
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_2_TT
+			}
+		}
 	}
 
 	option = {
@@ -93,6 +103,7 @@ ufc_situations.1105 = { #Consulate of the Sea
 			}
 		}
 		custom_tooltip = ufc_situations.1105.a.tt
+		custom_tooltip = ufc_situations.medium_descent.tt
 	}
 
 	option = {
@@ -102,7 +113,6 @@ ufc_situations.1105 = { #Consulate of the Sea
 }
 
 ufc_situations.1110 = {
-	#Consulate of the Sea
 	type = country_event
 	title = ufc_situations.1110.title
 	desc = ufc_situations.1110.desc
@@ -143,6 +153,7 @@ ufc_situations.1110 = {
 			}
 		}
 		custom_tooltip = ufc_situations.1110.a.tt
+		custom_tooltip = ufc_situations.medium_descent.tt
 		c:MOR = {
 			add_opinion = {
 				modifier = opinion_ufc_unsatisfied
@@ -159,5 +170,377 @@ ufc_situations.1110 = {
 				target = c:UFC
 			}
 		}
+	}
+}
+
+#random events
+
+ufc_situations.1115 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1115.title
+	desc = ufc_situations.1115.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1115.a
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+}
+
+ufc_situations.1120 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1120.title
+	desc = ufc_situations.1120.desc
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1120.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 4
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = 0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_ascend.tt
+	}
+	option = {
+		name = ufc_situations.1120.b
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1
+		}
+	}
+}
+
+ufc_situations.1125 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1125.title
+	desc = ufc_situations.1125.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	trigger = {
+		root.manpower_percentage >= 0.25
+		root.monthly_manpower >= 10
+		international_organization:ufc_trade_association.var:ufc_gra_payment_multiplier >= 0.05
+	}
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1125.a
+		add_manpower = {
+			value = root.monthly_manpower
+			multiply = -10
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+	option = {
+		name = ufc_situations.1125.b
+	}
+}
+
+ufc_situations.1130 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1130.title
+	desc = ufc_situations.1130.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	trigger = {
+		root.sailors_percentage >= 0.25
+		root.monthly_sailors >= 10
+	}
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1130.a
+		add_sailors = {
+			value = root.monthly_sailors
+			multiply = -10
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+	option = {
+		name = ufc_situations.1130.b
+	}
+}
+
+ufc_situations.1135 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1135.title
+	desc = ufc_situations.1135.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	trigger = {
+
+	}
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1135.a
+		location:granada = {
+			market = {
+				add_food_percentage = 0.25
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -6
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+	option = {
+		name = ufc_situations.1135.b
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 3
+		}
+	}
+}
+
+ufc_situations.1140 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1140.title
+	desc = ufc_situations.1140.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ufc_situations.1140.a
+		location:granada = {
+			market = {
+				add_goods_supply = { goods = goods:silver amount = market_goods_weak_gain }
+			}
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = -5
+			}
+		}
+		custom_tooltip = ufc_io.influence_small_descend.tt
+	}
+	option = {
+		name = ufc_situations.1140.b
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 3
+		}
+		location:granada = {
+			market = {
+				add_goods_supply = { goods = goods:silver amount = market_goods_mild_gain }
+			}
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = -5
+			}
+		}
+		custom_tooltip = ufc_io.influence_small_descend.tt
+		c:GRA = {
+			add_inflation = inflation_mild_penalty
+		}
+	}
+	option = {
+		name = ufc_situations.1140.c
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		custom_tooltip = ufc_io.influence_small_ascend.tt
+	}
+}
+
+
+ufc_situations.1145 = {
+	type = country_event
+	title = ufc_situations.1145.title
+	desc = ufc_situations.1145.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+
+	}
+	option = {
+		name = ufc_situations.1145.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -3
+		}
+		set_local_variable = {
+			name = ufc_var_current_income
+			value = root.monthly_income_trade_and_tax
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.1150
+			years = 2
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+	option = {
+		name = ufc_situations.1145.b
+	}
+}
+
+ufc_situations.1150 = {
+	type = country_event
+	title = ufc_situations.1150.title
+	desc = ufc_situations.1150.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	option = {
+		name = ufc_situations.1150.a
+		add_gold = {
+			value = root.local_var:ufc_var_current_income
+			multiply = 3
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+}
+
+ufc_situations.1155 = {
+	type = country_event
+	title = ufc_situations.1155.title
+	desc = ufc_situations.1155.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+		set_variable = rise_of_the_ufc_allow_centralized_trade_federations
+	}
+	option = {
+		name = ufc_situations.1155.a
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				multiply = 0
+			}
+		}
+		custom_tooltip = ufc_situations.never_pay_for_alhambra.tt
+	}
+	option = {
+		name = ufc_situations.1155.b
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				multiply = 0
+			}
+		}
+		custom_tooltip = ufc_situations.never_pay_for_alhambra.tt
+		add_policy = policy:centralized_trade_federations
+	}
+}
+
+ufc_situations.1200 = {
+	type = country_event
+	title = ufc_situations.1200.title
+	desc = ufc_situations.1200.desc
+
+	illustration_tags = {
+		10 = exterior
 	}
 }

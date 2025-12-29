@@ -1,0 +1,227 @@
+﻿ufc_unite_fruit_company_tradition = {
+	age = age_1_traditions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	exploration_mission_speed_modifier = 0.25
+	exploration_maintenance_cost = -0.25
+	icon = exploration
+	requires = feudalism_advance
+}
+
+ufc_religious_pragmatism = {
+	age = age_1_traditions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	tolerance_heathen = 2
+	icon = swiss_tolerance
+	requires = legalism_advance
+}
+
+ufc_distributed_business_network = {
+	age = age_1_traditions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	for = dip
+	icon = free_trade
+	trade_range_modifier = 0.2
+	trade_efficiency = 0.05
+}
+
+ufc_trade_ambassador = {
+	age = age_1_traditions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = diplomatic_training
+	diplomatic_reputation = 2
+	improve_relation_impact = 0.15
+}
+
+ufc_sponsor_renaissance = {
+	age = age_2_renaissance
+	potential = {
+		has_or_had_tag = UFC
+	}
+	for = adm
+	icon = renaissance_advance
+	monthly_prestige = 0.1
+	skill_of_new_artists = 0.1
+	embrace_institution_cost_modifier = -0.2
+}
+
+ufc_commercial_mathematics = {
+	age = age_2_renaissance
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = gra_adaptative_trade
+	for = dip
+	global_burghers_max_literacy = 20
+	global_max_literacy = 5
+	trade_income = 0.1
+}
+
+ufc_sailor_selections_system = {
+	age = age_2_renaissance
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = hol_sailors
+	global_sailors_modifier = -0.1
+	global_maritime_presence_modifier = 0.2
+	monthly_navy_tradition = 0.1
+	requires = naval_morale_advance_1
+}
+
+ufc_from_new_world = {
+	age = age_3_discovery
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = cas_new_world
+	colonial_migration_size_modifier = 0.25
+	colonial_range_modifier = 0.25
+	global_population_growth = 0.0025
+	requires = open_sea_exploration
+}
+
+ufc_cocoa_republic = {
+	age = age_3_discovery
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = origin_of_coffee
+	for = adm
+	global_cocoa_output_modifier = 0.2
+	global_sugar_output_modifier = 0.2
+	global_tobacco_output_modifier = 0.2
+	global_chili_output_modifier = 0.2
+	global_potato_output_modifier = 0.2
+}
+
+ufc_the_rereconquista = {
+	age = age_3_discovery
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = cas_the_reconquista
+	land_morale_modifier = 0.15
+	requires = pike_square
+}
+
+ufc_calibrate_the_clock = {
+	age = age_4_reformation
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = crown_power_advance_renaissance
+	global_crown_estate_power = 0.2
+	global_integration_speed_modifier = 0.2
+	for = adm
+}
+
+ufc_subcompany = {
+	age = age_4_reformation
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = renaissance_subject_opinions_advance
+	subject_loyalty = 5
+	subject_income_modifier = 0.2
+	annexation_speed = 0.2
+	for = dip
+}
+
+ufc_marine = {
+	age = age_4_reformation
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = cas_marine_infantry
+	army_infantry_power = 0.15
+	power_projection = 5
+	for = mil
+}
+
+ufc_secular_humanism = {
+	age = age_4_reformation
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = hun_realm_of_many_religions
+	convert_religion_cost_modifier = 10
+	global_pop_conversion_speed = 0.075
+	tolerance_own = 1
+}
+
+ufc_revolution = {
+	age = age_5_absolutism
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = military_revolution_advance
+	legislative_efficiency = 0.2
+	discipline = 0.05
+	tax_income_efficiency =-0.05
+}
+
+ufc_local_technical_officers_council = {
+	age = age_5_absolutism
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = deliberative_council
+	global_max_rural_control = 0.15
+	global_max_control = 0.05
+	land_cost_on_distance_from_capital_modifier = -0.05
+}
+
+ufc_anti_early_nationalism = {
+	age = age_5_absolutism
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = national_assemblies_advance
+	global_integration_speed_modifier = 0.05
+	global_separatism = -0.05
+	pop_join_rebel_threshold = -0.05
+}
+
+ufc_compulsory_education = {
+	age = age_6_revolutions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	for = adm
+	icon = dutch_education
+	global_max_literacy = 20
+	global_monthly_literacy = 0.03
+}
+
+ufc_accelerate_industrialization = {
+	age = age_6_revolutions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = industrialization_advance
+	for = dip
+	global_production_efficiency = 0.1
+	global_coal_output_modifier = 0.2
+	global_iron_output_modifier = 0.2
+	global_copper_output_modifier = 0.2
+}
+
+ufc_to_stellaris = {
+	age = age_6_revolutions
+	potential = {
+		has_or_had_tag = UFC
+	}
+	icon = renaissance_thought
+	for = mil
+	colonial_range = 10000
+	trade_range = 10000
+	naval_range = 10000
+}

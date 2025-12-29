@@ -4,3 +4,11 @@
 	}
 	character_life_expectancy = 50	#So our guy does not die too fast
 }
+
+ufc_modifier_medium_cabinet_efficiency = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+	country_cabinet_efficiency = 0.10
+}

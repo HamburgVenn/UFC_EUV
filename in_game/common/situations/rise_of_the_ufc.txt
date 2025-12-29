@@ -53,8 +53,20 @@
 				value = flag:UFC_SITUATION_MISSION_1_TT
 			}
 			set_variable = {
-				name = rise_of_the_ufc_secondary_mission_counting_0
-				value = flag:UFC_SITUATION_SECONDARY_MISSION_0
+				name = rise_of_the_ufc_secondary_mission_counting
+				value = flag:UFC_SITUATION_MISSION_BLANK
+			}
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_BLANK_TT
+			}
+			set_variable = {
+				name = rise_of_the_ufc_thirdary_mission_counting
+				value = flag:UFC_SITUATION_MISSION_BLANK
+			}
+			set_variable = {
+				name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_BLANK_TT
 			}
 		}
 	}
@@ -91,7 +103,52 @@
 				trigger_event_non_silently = ufc_situations.1000
 			}
 		}
+		#削弱阿尔罕布拉税款的随机事件
+		if = {
+			limit = {
+				international_organization:ufc_trade_association.var:ufc_gra_payment_multiplier >= 0.05
+			}
+			random_list = {
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1115
+					}
+				}
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1120
+					}
+				}
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1125
+					}
+				}
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1130
+					}
+				}
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1135
+					}
+				}
+				2 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1140
+					}
+				}
+				1 = {
+					c:UFC = {
+						trigger_event_non_silently = ufc_situations.1145
+					}
+				}
+				87 = {
 
+				}
+			}
+		}
 	}
 
 

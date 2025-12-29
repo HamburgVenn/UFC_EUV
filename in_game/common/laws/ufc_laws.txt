@@ -1,0 +1,19 @@
+﻿INJECT:administrative_system = {
+	centralized_trade_federations = {
+		potential = {
+			tag = UFC
+			has_fired_unique_event = ufc_situations.1155
+			hidden_trigger = {
+				has_variable = rise_of_the_ufc_allow_centralized_trade_federations
+			}
+		}
+		country_modifier = {
+			trade_efficiency = 0.05
+			monthly_towards_centralization = societal_value_monthly_move
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+}
