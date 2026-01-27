@@ -13,5 +13,15 @@ UFC_on_game_start = {
                 days = -1
             }
         }
+        character:cas_alfonso_xi_burgundy ?= {
+            add_character_modifier = {
+                modifier = "ufc_modifier_strong"
+                size = 1
+                days = -1
+            }
+        }
+        c:UFC = {
+            trigger_event_non_silently = flavor_ufc.0
+        }
     }
 }

@@ -7,13 +7,12 @@ COUNTRIES = {
 
             country_rank = rank_county
 
-
+            
             include = "expl_muslim_mediterranean"
             include = "expl_silk_road_west"
             include = "expl_silk_road_center"
             include = "expl_silk_road_east"
             include = "expl_indian_trade_route"
-
             government = {
                 type = republic
                 heir_selection = oligarchic_elective
@@ -44,7 +43,6 @@ COUNTRIES = {
                     commercial_advisory_council
                     building_rights
                     formal_guilds
-                    guild_investments
                 }
                 laws = {
                     administrative_system = decentralized_trade_federations

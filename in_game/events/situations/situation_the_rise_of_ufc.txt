@@ -22,9 +22,11 @@ ufc_situations.1000 = { #Consulate of the Sea
 	option = {
 		name = ufc_situations.1000.a
 		custom_tooltip = ufc_situations.1000.tt
-		change_variable = {
-			name = rise_of_the_ufc_secondary_mission_counting_0
-			value = flag:UFC_SITUATION_SECONDARY_MISSION_1
+		situation:rise_of_the_ufc = {
+			change_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting_0
+				value = flag:UFC_SITUATION_SECONDARY_MISSION_1
+			}
 		}
 	}
 }
@@ -44,6 +46,7 @@ ufc_situations.1100 = { #Consulate of the Sea
 		international_organization:ufc_trade_association = {
 			set_variable = { name = ufc_gra_payment_multiplier value = 1}
 		}
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 	}
 
 	option = {
@@ -51,7 +54,7 @@ ufc_situations.1100 = { #Consulate of the Sea
 		custom_tooltip = ufc_situations.1100.tt
 		change_variable = {
 			name = rise_of_the_ufc_mission_counting
-			value = flag:UFC_SITUATION_MISSION_2
+			value = flag:UFC_SITUATION_MISSION_1
 		}
 	}
 }
@@ -63,8 +66,8 @@ ufc_situations.1105 = { #Consulate of the Sea
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = UFC
-		from = 1339.1.1
-		to = 1339.3.1
+		from = 1339.2.1
+		to = 1339.4.1
 		monthly_chance = 100
 	}
 	illustration_tags = {
@@ -73,28 +76,32 @@ ufc_situations.1105 = { #Consulate of the Sea
 	}
 
 	immediate = {
-		create_character = {
-			dynasty = dynasty:nasrid_dynasty
-			first_name = name_muhammad
-			last_name = "nasrid_dynasty"
-			adm = 0
-			dip = 0
-			mil = 0
-			culture = culture:andalusi
-			birth_location = location:granada
-			religion = religion:sunni
-			birth_date = 1339.1.4
-			estate = estate_type:crown_estate
-			father = character:gra_yusuf_i_nasrid
-			save_scope_as = target_character
+		c:GRA = {
+			create_character = {
+				dynasty = dynasty:nasrid_dynasty
+				first_name = name_muhammad
+				last_name = "nasrid_dynasty"
+				adm = 0
+				dip = 0
+				mil = 0
+				culture = culture:andalusi
+				birth_location = location:granada
+				religion = religion:sunni
+				birth_date = 1339.1.4
+				estate = estate_type:crown_estate
+				father = character:gra_yusuf_i_nasrid
+				save_scope_as = target_character
+				script = gra_muhammad_v_nasrid
+			}
 		}
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 	}
 
 	option = {
 		name = ufc_situations.1105.a
 		add_gold = {
 			value = root.monthly_income_trade_and_tax
-			multiply = -6
+			multiply = -3
 		}
 		international_organization:ufc_trade_association = {
 			change_variable = {
@@ -126,6 +133,9 @@ ufc_situations.1110 = {
 	illustration_tags = {
 		10 = regular
 		10 = interior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
 	}
 	option = {
 		name = ufc_situations.1110.a
@@ -186,7 +196,7 @@ ufc_situations.1115 = { #Consulate of the Sea
 	}
 
 	immediate = {
-
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
 	}
 
 	option = {
@@ -249,10 +259,11 @@ ufc_situations.1125 = { #Consulate of the Sea
 	}
 	trigger = {
 		root.manpower_percentage >= 0.25
-		root.monthly_manpower >= 10
+		root.monthly_manpower >= 0.005
 		international_organization:ufc_trade_association.var:ufc_gra_payment_multiplier >= 0.05
 	}
 	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
 
 	}
 
@@ -260,7 +271,7 @@ ufc_situations.1125 = { #Consulate of the Sea
 		name = ufc_situations.1125.a
 		add_manpower = {
 			value = root.monthly_manpower
-			multiply = -10
+			multiply = -24
 		}
 		international_organization:ufc_trade_association = {
 			change_variable = {
@@ -286,17 +297,17 @@ ufc_situations.1130 = { #Consulate of the Sea
 	}
 	trigger = {
 		root.sailors_percentage >= 0.25
-		root.monthly_sailors >= 10
+		root.monthly_sailors >= 0.01
 	}
 	immediate = {
-
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
 	}
 
 	option = {
 		name = ufc_situations.1130.a
 		add_sailors = {
 			value = root.monthly_sailors
-			multiply = -10
+			multiply = -24
 		}
 		international_organization:ufc_trade_association = {
 			change_variable = {
@@ -324,7 +335,7 @@ ufc_situations.1135 = { #Consulate of the Sea
 
 	}
 	immediate = {
-
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
 	}
 
 	option = {
@@ -336,7 +347,7 @@ ufc_situations.1135 = { #Consulate of the Sea
 		}
 		add_gold = {
 			value = root.monthly_income_trade_and_tax
-			multiply = -6
+			multiply = -3
 		}
 		international_organization:ufc_trade_association = {
 			change_variable = {
@@ -350,7 +361,7 @@ ufc_situations.1135 = { #Consulate of the Sea
 		name = ufc_situations.1135.b
 		add_gold = {
 			value = root.monthly_income_trade_and_tax
-			multiply = 3
+			multiply = 2
 		}
 	}
 }
@@ -366,7 +377,7 @@ ufc_situations.1140 = { #Consulate of the Sea
 	}
 
 	immediate = {
-
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
 	}
 
 	option = {
@@ -386,7 +397,7 @@ ufc_situations.1140 = { #Consulate of the Sea
 		international_organization:ufc_trade_association = {
 			change_variable = {
 				name = merchant_fenderal_impact
-				add = -5
+				add = -2
 			}
 		}
 		custom_tooltip = ufc_io.influence_small_descend.tt
@@ -439,12 +450,12 @@ ufc_situations.1145 = {
 	desc = ufc_situations.1145.desc
 
 	illustration_tags = {
-		10 = happy
+		10 = angry
 		10 = exterior
 	}
 
 	immediate = {
-
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
 	}
 	option = {
 		name = ufc_situations.1145.a
@@ -452,7 +463,11 @@ ufc_situations.1145 = {
 			value = root.monthly_income_trade_and_tax
 			multiply = -3
 		}
-		set_local_variable = {
+		# set_variable = {
+		# 	name = ufc_var_current_income
+		# 	value = root.monthly_income_trade_and_tax
+		# }
+		save_scope_value_as = {
 			name = ufc_var_current_income
 			value = root.monthly_income_trade_and_tax
 		}
@@ -482,12 +497,18 @@ ufc_situations.1150 = {
 		10 = happy
 		10 = exterior
 	}
-
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
 	option = {
 		name = ufc_situations.1150.a
+		# add_gold = {
+		# 	value = root.var:ufc_var_current_income
+		# 	multiply = 3
+		# }
 		add_gold = {
-			value = root.local_var:ufc_var_current_income
-			multiply = 3
+			value = root.monthly_income_trade_and_tax
+			multiply = -3
 		}
 		international_organization:ufc_trade_association = {
 			change_variable = {
@@ -511,6 +532,8 @@ ufc_situations.1155 = {
 
 	immediate = {
 		set_variable = rise_of_the_ufc_allow_centralized_trade_federations
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+
 	}
 	option = {
 		name = ufc_situations.1155.a
@@ -535,12 +558,933 @@ ufc_situations.1155 = {
 	}
 }
 
+ufc_situations.1160 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.1160.title
+	desc = ufc_situations.1160.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1342.2.1
+		to = 1352.4.1
+		monthly_chance = 100
+	}
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		character:gra_muhammad_v_nasrid = {
+			save_scope_as = target_character
+		}
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = ufc_situations.1160.a
+		character:gra_muhammad_v_nasrid = {
+			add_trait = trait:child_ambitious
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.05
+		}
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+
+	option = {
+		name = ufc_situations.1160.b
+		character:gra_muhammad_v_nasrid = {
+			add_trait = trait:child_gallant
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		add_stability = -0.1
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+
+	option = {
+		name = ufc_situations.1160.c
+		character:gra_muhammad_v_nasrid = {
+			add_trait = trait:child_shrewd
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = ufc_gra_payment_multiplier
+				add = -0.05
+			}
+		}
+		add_prestige = -0.1
+		custom_tooltip = ufc_situations.small_descent.tt
+	}
+}
+
+
+
+
+
 ufc_situations.1200 = {
 	type = country_event
 	title = ufc_situations.1200.title
 	desc = ufc_situations.1200.desc
-
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.6.1
+		to = 1339.9.1
+		monthly_chance = 90
+	}
+	fire_only_once = yes
 	illustration_tags = {
 		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = ufc_situations.1200.a
+		custom_tooltip = ufc_situations.1200.a.tt
+		ufc_se_refresh_random_mission = yes
+	}
+}
+
+#格拉纳达黄金时代
+ufc_situations.1300 = {
+	type = country_event
+	title = ufc_situations.1300.title
+	desc = ufc_situations.1300.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1349.1.1
+		to = 1359.9.1
+		monthly_chance = 20
+	}
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+		c:GRA = {
+			create_character = {
+				first_name = name_muhammad
+				last_name = ibn_al_Jayyab
+				nickname = ibn_suleiman
+				birth_date = 1274.1.1
+				birth_location = location:granada
+				culture = culture:andalusi
+				religion = religion:sunni
+				estate = estate_type:clergy_estate
+				adm = 81
+				dip = 54
+				mil = 23
+				save_scope_as = target_character_1
+				kill_character = {
+					target = scope:target_character_1
+					disease = disease:bubonic_plague
+				}
+			}
+
+			create_character = {
+				first_name = name_lisan
+				last_name = ibn_al_khatib
+				nickname = nick_ad_din
+				birth_date = 1313.11.16
+				birth_location = location:loja
+				culture = culture:andalusi
+				religion = religion:sunni
+				estate = estate_type:clergy_estate
+				adm = 95
+				dip = 72
+				mil = 20
+				add_character_modifier = {
+					modifier = healthy_character
+				}
+				save_scope_as = target_character_2
+				script = gra_ibn_khatib_script
+			}
+		}
+	}
+
+	option = {
+		name = ufc_situations.1300.a
+		situation:rise_of_the_ufc = {
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting
+				value = flag:UFC_SITUATION_MISSION_GOLDEN_AGE
+			}
+			set_variable = {
+				name = rise_of_the_ufc_secondary_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_GOLDEN_AGE_TT
+			}
+		}
+		c:GRA = {
+			add_character_to_random_open_cabinet = {
+				target = character:gra_ibn_khatib_script
+			}
+		}
+		custom_tooltip = ufc_situations.1300.a.tt
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.1305
+			days = 32
+		}
+	}
+}
+
+ufc_situations.1305 = {
+	type = country_event
+	title = ufc_situations.1305.title
+	desc = ufc_situations.1305.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.1305.a
+		character:gra_ibn_khatib_script = {
+			add_character_modifier = {
+				modifier = ufc_modifier_memory_of_beloved_teacher
+			}
+		}
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.1310
+			days = 128
+		}
+	}
+}
+
+ufc_situations.1310 = {
+	type = country_event
+	title = ufc_situations.1310.title
+	desc = ufc_situations.1310.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+	historical_info = ufc_situations.1310.hist
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.1310.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1.5
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		add_prestige = prestige_mild_bonus
+		location:malaga = {
+			construct_building = {
+				building_type = building_type:hospital
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.1310.b
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1.5
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		add_prestige = prestige_mild_bonus
+		c:GRA = {
+			add_research_progress = research_progress_severe_bonus
+		}
+		add_research_progress = research_progress_mild_bonus
+	}
+	option = {
+		name = ufc_situations.1310.c
+		add_prestige = prestige_weak_penalty
+	}
+	after = {
+		location:granada = {
+			create_art = {
+				quality = 30
+				artist = scope:target_character
+				type = work_of_art_type:poem
+				key = ibn_khatib_black_death_note
+			}
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.1315
+			days = 128
+		}
+	}
+}
+
+ufc_situations.1315 = {
+	type = country_event
+	title = ufc_situations.1315.title
+	desc = ufc_situations.1315.desc
+	fire_only_once = yes
+	historical_info = ufc_situations.1315.hist
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character_1
+		}
+		character:gra_yusuf_i_nasrid = {
+			save_scope_as = target_character_2
+		}
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = ufc_situations.1315.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1
+		}
+		location:malaga = {
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.1315.b
+		add_prestige = prestige_weak_penalty
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.1320
+			days = 256
+		}
+	}
+}
+
+
+ufc_situations.1320 = {
+	type = country_event
+	title = ufc_situations.1320.title
+	desc = ufc_situations.1320.desc
+	fire_only_once = yes
+	historical_info = ufc_situations.1320.hist
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character_1
+		}
+		character:gra_yusuf_i_nasrid = {
+			save_scope_as = target_character_2
+		}
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = ufc_situations.1320.a
+		location:malaga = {
+			construct_building = {
+				building_type = building_type:university
+				cost_multiplier = 0.25
+				payer = c:UFC
+			}
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		add_prestige = prestige_extreme_bonus
+	}
+	option = {
+		name = ufc_situations.1320.b
+		add_prestige = prestige_weak_penalty
+	}
+
+	after = {
+		location:granada = {
+			construct_building = {
+				building_type = building_type:university
+			}
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.1325
+			days = 256
+		}
+	}
+}
+
+ufc_situations.1325 = {
+	type = country_event
+	title = ufc_situations.1325.title
+	desc = ufc_situations.1325.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character_1
+		}
+		character:gra_yusuf_i_nasrid = {
+			save_scope_as = target_character_2
+		}
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = ufc_situations.1325.a
+		c:GRA = {
+			add_prestige = prestige_extreme_bonus
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.1325.b
+		add_prestige = prestige_mild_bonus
+	}
+
+	after = {
+		location:granada = {
+			create_art = {
+				quality = 60
+				artist = character:gra_yusuf_i_nasrid
+				type = work_of_art_type:palace
+				key = comares_palace
+			}
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.1330
+			days = 256
+		}
+	}
+}
+
+ufc_situations.1330 = {
+	type = country_event
+	title = ufc_situations.1330.title
+	desc = ufc_situations.1330.desc
+	fire_only_once = yes
+	historical_info = ufc_situations.1330.hist
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character_1
+		}
+		character:gra_yusuf_i_nasrid = {
+			save_scope_as = target_character_2
+		}
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = ufc_situations.1330.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1
+		}
+		location:almeria = {
+			change_development = development_mild_bonus
+			upgrade_location_rank = yes
+			construct_building = {
+				building_type = building_type:UFC_trade_post
+				payer = c:UFC
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.1330.b
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		add_prestige = prestige_weak_penalty
+	}
+
+	after = {
+		location:almeria = {
+			change_prosperity = prosperity_extreme_bonus
+			create_art = {
+				quality = 60
+				artist = character:gra_ibn_khatib_script
+				type = work_of_art_type:poem
+				key = The_Appearance_of_a_Ghost_During_a_Trip_of_Winter_and_Summer
+			}
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.1335
+			days = 256
+		}
+	}
+}
+
+#伊本白图泰上台
+ufc_situations.2100 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2100.title
+	desc = ufc_situations.2100.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+		character:mor_ibn_battuta ?= {
+			save_scope_as = target_character
+		}
+		if = {
+			limit = {
+				character:mor_ibn_battuta = {
+					is_alive = no
+				}
+			}
+			create_character = {
+				first_name = name_muhammad
+				last_name = ibn_battuta
+				nickname = name_abdullah
+				birth_date = 1304.2.4
+				culture = culture:moroccan
+				religion = religion:sunni
+				estate = estate_type:clergy_estate
+				adm = 89
+				dip = 100
+				mil = 82
+				save_scope_as = target_character
+				save_scope_as = mor_ibn_battuta
+			}
+		}
+		situation:rise_of_the_ufc = {
+			set_variable = {
+				name = rise_of_the_ufc_mission_counting
+				value = flag:UFC_SITUATION_MISSION_TRAVELED_SALESMAN
+			}
+			set_variable = {
+				name = rise_of_the_ufc_mission_counting_tooltip
+				value = flag:UFC_SITUATION_MISSION_TRAVELED_SALESMAN_TT
+			}
+		}
+	}
+
+	option = {
+		name = ufc_situations.2100.a
+		situation:rise_of_the_ufc = {
+			set_variable = {
+				name = rise_of_the_ufc_blake_death_influence
+				value = 100
+			}
+		}
+		character:mor_ibn_battuta = {
+		 	move_country = c:GRA
+		}
+		c:GRA = {
+			add_country_modifier = {
+				modifier = ufc_modifier_pandepic_cremation
+				years = 5
+			}
+		}
+		c:UFC = {
+			add_country_modifier = {
+				modifier = ufc_modifier_pandepic_cremation
+				years = 5
+			}
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2105
+					days = 32
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2105 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2105.title
+	desc = ufc_situations.2105.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2105.a
+		# character:mor_ibn_battuta = {
+		# 	move_country = c:UFC
+		# }
+		c:GRA = {
+			add_prestige = 20
+			add_estate_satisfaction = {
+				type = estate_type:clergy_estate
+				value = -0.1
+			}
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2110
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2110 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2110.title
+	desc = ufc_situations.2110.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2110.a
+		character:mor_ibn_battuta = {
+			add_character_modifier = {
+				modifier = ufc_modifier_no_more_chasing
+			}
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2115
+					days = 32
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2115 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2115.title
+	desc = ufc_situations.2115.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2115.a
+		character:mor_ibn_battuta = {
+			move_country = c:UFC
+		}
+		c:UFC = {
+			add_prestige = 10
+		}
+	}
+	# option = {
+	# 	name = ufc_situations.2115.b
+	# 	character:mor_ibn_battuta = {
+	# 		move_country = c:MOR
+	# 	}
+	# 	c:UFC = {
+	# 		add_prestige = -10
+	# 	}
+	# 	custom_tooltip = ufc_situations.2115.b.tt
+	# }
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2120
+					days = 128
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2120 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2120.title
+	desc = ufc_situations.2120.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		ruler = {
+			save_scope_as = target_character_2
+		}
+	}
+
+	option = {
+		name = ufc_situations.2120.a
+		character:mor_ibn_battuta = {
+			move_country = c:UFC
+			change_character_estate = estate_type:nobles_estate
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2125
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2125 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2125.title
+	desc = ufc_situations.2125.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2125.a
+		location:malaga = {
+			change_institution_progress = {
+				type = institution:meritocracy
+				value = 100
+			}
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2130
+					days = 96
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2130 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2130.title
+	desc = ufc_situations.2130.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2130.a
+		add_country_modifier = {
+			modifier = ufc_modifier_slow_expansion
+			years = 10
+		}
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2135
+					days = 128
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2135 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2135.title
+	desc = ufc_situations.2135.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		create_character = {
+			last_name = ibn_juzay
+			adm = 54
+			dip = 83
+			mil = 8
+			culture = culture:andalusi
+			birth_location = location:granada
+			religion = religion:sunni
+			birth_date = 1307.1.30
+			estate = estate_type:clergy_estate
+			save_scope_as = target_character
+			artist = writer
+			artist_skill = 0.75
+			create_in_limbo = yes
+		}
+	}
+
+	option = {
+		name = ufc_situations.2135.a
+		scope:target_character = {
+			start_work_of_art = {
+				quality = 95
+				work_of_art_type = work_of_art_type:novel
+			}
+		}
+		# location:malaga = {
+		# 	create_art = {
+		# 		quality = 95
+		# 		artist = scope:target_character
+		# 		type = work_of_art_type:novel
+		# 		key = traval_notes_of_ibn_battuta
+		# 	}
+		# }
+	}
+}
+
+
+
+
+ufc_situations.2150 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2150.title
+	desc = ufc_situations.2150.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		set_variable = unlocked_law_ufc_monetary_law
+	}
+
+	option = {
+		name = ufc_situations.2150.a
+		add_policy = policy:ufc_banknote_policy
+	}
+	option = {
+		name = ufc_situations.2150.b
+		add_policy = policy:ufc_european_monetary_policy
+	}
+}
+
+ufc_situations.2155 = { #Consulate of the Sea
+	type = country_event
+	title = ufc_situations.2155.title
+	desc = ufc_situations.2155.desc
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		
+	}
+
+	option = {
+		name = ufc_situations.2155.a
+		character:mor_ibn_battuta = {
+			add_character_modifier = {
+				modifier = ufc_modifier_dept_of_love
+			}
+		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿ufc_se_refresh_random_mission = {
-	custom_tooltip = new_child_for_ruler
+	custom_tooltip = UFC_REFRESH_RANDOM_EVENTS
 	hidden_effect = {
 		situation:rise_of_the_ufc = {
 			random_list = {
@@ -12,6 +12,15 @@
 						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
 						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_TRADE_PORT_TT
 					}
+					c:UFC = {
+						set_variable = {
+							name = ufc_random_mission_building_trade_post_variable
+							value = {
+								add = total_effective_building_levels:UFC_trade_post
+								add = 2
+							}
+						}
+					}
 				}
 				1 = {
 					set_variable = {
@@ -22,6 +31,15 @@
 						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
 						value = flag:UFC_SITUATION_MISSION_RANDOM_ENLARGE_IO_TT
 					}
+					c:UFC = {
+						set_variable = {
+							name = ufc_random_mission_io_members_variable
+							value = {
+								add = international_organization:ufc_trade_association.total_members
+								add = 1
+							}
+						}
+					}
 				}
 				1 = {
 					set_variable = {
@@ -31,6 +49,57 @@
 					set_variable = {
 						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
 						value = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_SHIPYARD_TT
+					}
+					c:UFC = {
+						set_variable = {
+							name = ufc_random_mission_building_shipwright_guild_variable
+							value = {
+								add = total_effective_building_levels:UFC_shipwright_guild
+								add = 1
+							}
+						}
+					}
+				}
+				1 = {
+					#提高稳定
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting
+						value = flag:UFC_SITUATION_MISSION_RANDOM_STABILITY
+					}
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+						value = flag:UFC_SITUATION_MISSION_RANDOM_STABILITY_TT
+					}
+					c:UFC = {
+						set_variable = {
+							name = ufc_random_mission_stability_variable
+							value = {
+								add = stability
+								add = 10
+								max = 95
+							}
+						}
+					}
+				}
+				1 = {
+					#提高稳定
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting
+						value = flag:UFC_SITUATION_MISSION_RANDOM_LEGALITY
+					}
+					set_variable = {
+						name = rise_of_the_ufc_thirdary_mission_counting_tooltip
+						value = flag:UFC_SITUATION_MISSION_RANDOM_LEGALITY_TT
+					}
+					c:UFC = {
+						set_variable = {
+							name = ufc_random_mission_legality_variable
+							value = {
+								add = republican_tradition
+								add = 10
+								max = 95
+							}
+						}
 					}
 				}
 			}
@@ -66,5 +135,72 @@ ufc_se_effect_random_mission = {
 				trigger_event_non_silently = ufc_random_mission.8
 			}
 		}
+	}
+}
+
+ufc_se_trigger_random_mission = {
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_TRADE_PORT
+			}
+			c:UFC = {
+				total_effective_building_levels:UFC_trade_post >= var:ufc_random_mission_building_trade_post_variable
+			}
+		}
+		ufc_se_effect_random_mission = yes
+	}
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_ENLARGE_IO
+			}
+			international_organization:ufc_trade_association.total_members >= c:UFC.var:ufc_random_mission_io_members_variable
+		}
+		ufc_se_effect_random_mission = yes
+	}
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_SHIPYARD
+			}
+			c:UFC = {
+				total_effective_building_levels:UFC_shipwright_guild >= var:ufc_random_mission_building_shipwright_guild_variable
+			}
+		}
+		ufc_se_effect_random_mission = yes
+	}
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_BUILD_SHIPYARD
+			}
+			c:UFC = {
+				total_effective_building_levels:UFC_shipwright_guild >= var:ufc_random_mission_building_shipwright_guild_variable
+			}
+		}
+		ufc_se_effect_random_mission = yes
+	}
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_STABILITY
+			}
+			c:UFC = {
+				stability >= var:ufc_random_mission_stability_variable
+			}
+		}
+		ufc_se_effect_random_mission = yes
+	}
+	if = {
+		limit = {
+			situation:rise_of_the_ufc = {
+				var:rise_of_the_ufc_thirdary_mission_counting = flag:UFC_SITUATION_MISSION_RANDOM_LEGALITY
+			}
+			c:UFC = {
+				republican_tradition >= var:ufc_random_mission_legality_variable
+			}
+		}
+		ufc_se_effect_random_mission = yes
 	}
 }

@@ -5,10 +5,60 @@
 	character_life_expectancy = 50	#So our guy does not die too fast
 }
 
+ufc_modifier_strong = {
+	game_data = {
+		category = character
+	}
+	character_life_expectancy = 30	#So our guy does not die too fast
+}
+
 ufc_modifier_medium_cabinet_efficiency = {
 	game_data = {
 		category = country
 		decaying = yes
 	}
 	country_cabinet_efficiency = 0.10
+}
+
+ufc_modifier_pandepic_cremation = {
+	game_data = {
+		category = country
+	}
+	global_disease_resistance = 0.33
+	tolerance_own = -1
+	monthly_prestige = -0.1
+}
+
+ufc_modifier_no_more_chasing = {
+	game_data = {
+		category = character
+	}
+	character_life_expectancy = 20
+	estate_power_from_cabinet = -1
+	character_cabinet_efficiency = 0.1
+}
+
+ufc_modifier_memory_of_beloved_teacher = {
+	game_data = {
+		category = character
+	}
+	character_life_expectancy = 30
+	character_cabinet_efficiency = 0.25
+}
+
+ufc_modifier_dept_of_love = {
+	game_data = {
+		category = character
+	}
+	court_spending_cost = 0.05
+}
+
+ufc_modifier_slow_expansion = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+	global_foreign_build_buildings_cost = 0.2
+	stability_investment = standard_stability_investment
+	trade_efficiency = medium_trade_efficiency_bonus
 }

@@ -17,3 +17,33 @@
 		years = 2
 	}
 }
+
+ufc_monetary_law = {
+	law_category = socioeconomic
+
+	potential = {
+		has_unlocked_law_trigger = { type = ufc_monetary_law }
+	}
+
+	ufc_european_monetary_policy = {
+		country_modifier = {
+			burghers_estate_target_satisfaction = 0.05
+			monthly_inflation = -0.0003
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	ufc_banknote_policy = {
+		country_modifier = {
+			trade_efficiency = 0.05
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+
+}

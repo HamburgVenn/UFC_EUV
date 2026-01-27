@@ -175,7 +175,7 @@ situation_panel = {
             blockoverride "header_text" {
                 margin_left = 10
                 align = nobaseline
-                text = "UFC_SITUATION_CURRENT_MISSION_TWO_TT"
+                text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('rise_of_the_ufc_secondary_mission_counting').GetFlagName]" #"UFC_SITUATION_CURRENT_MISSION_TWO_TT"
 
                 tooltipwidget = {
                     ContextualTooltipType = {
@@ -209,7 +209,7 @@ situation_panel = {
             blockoverride "header_text" {
                 margin_left = 10
                 align = nobaseline
-                text = "UFC_SITUATION_CURRENT_MISSION_TWO_TT"
+                text = "UFC_SITUATION_CURRENT_MISSION_RANDOM_TT"
 
                 tooltipwidget = {
                     ContextualTooltipType = {
@@ -233,72 +233,72 @@ situation_panel = {
                     layoutpolicy_horizontal = expanding
                     max_width = 400
                     autoresize = yes
-                    text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('rise_of_the_ufc_thirdary_mission_counting_0').GetFlagName]"
+                    text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('rise_of_the_ufc_thirdary_mission_counting_tooltip').GetFlagName]"
                 }
             }
         }
 
-        #random missions
-        blockoverride "situation_panel_main_content_bottom" {
-            situation_side_cards = {
-                blockoverride "card_datacontext" {}
-                blockoverride "left_top_text" {
-                    text = "UFC_SITUATION_CURRENT_MISSION_THREE_TT"
-                }
-                blockoverride "left_bottom_content" {
-                    scrollarea = {
-                        layoutpolicy_horizontal = expanding
-                        size = { -1 200 }
-                        scrollbarpolicy_horizontal = always_off
-                        scrollbar_vertical = {
-                            using = Scrollbar_Vertical
-                        }
-
-                        scrollwidget = {
-                            dynamicgridbox = {
-                                layoutpolicy_horizontal = expanding
-                                flipdirection = yes
-                                position = {10 10}
-                                datamodel_wrap = 5
-                                maxhorizontalslots = 12
-                                #datamodel = "UFC_MISSION_TEST_TT"
-                                item = {
-                                    country_flag_small = {}
-                                }
-                            }
-                        }
-                    }
-                }
-
-                blockoverride "right_header_text" {
-                    text = "UFC_SITUATION_CURRENT_MISSION_THREE_TT"
-                }
-                blockoverride "right_bottom_content" {
-                    scrollarea = {
-                        layoutpolicy_horizontal = expanding
-                        size = { -1 200 }
-                        scrollbarpolicy_horizontal = always_off
-                        scrollbar_vertical = {
-                            using = Scrollbar_Vertical
-                        }
-
-                        scrollwidget = {
-                            dynamicgridbox = {
-                                layoutpolicy_horizontal = expanding
-                                flipdirection = yes
-                                position = {10 10}
-                                datamodel_wrap = 5
-                                maxhorizontalslots = 12
-                                datamodel = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('rise_of_the_ufc_mission_counting_tooltip').GetFlagName]"
-                                item = {
-                                    country_flag_small = {}
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        # #random missions
+        # blockoverride "situation_panel_main_content_bottom" {
+        #     situation_side_cards = {
+        #         blockoverride "card_datacontext" {}
+        #         blockoverride "left_top_text" {
+        #             text = "UFC_SITUATION_CURRENT_MISSION_THREE_TT"
+        #         }
+        #         blockoverride "left_bottom_content" {
+        #             scrollarea = {
+        #                 layoutpolicy_horizontal = expanding
+        #                 size = { -1 200 }
+        #                 scrollbarpolicy_horizontal = always_off
+        #                 scrollbar_vertical = {
+        #                     using = Scrollbar_Vertical
+        #                 }
+        #
+        #                 scrollwidget = {
+        #                     dynamicgridbox = {
+        #                         layoutpolicy_horizontal = expanding
+        #                         flipdirection = yes
+        #                         position = {10 10}
+        #                         datamodel_wrap = 5
+        #                         maxhorizontalslots = 12
+        #                         #datamodel = "UFC_MISSION_TEST_TT"
+        #                         item = {
+        #                             country_flag_small = {}
+        #                         }
+        #                     }
+        #                 }
+        #             }
+        #         }
+        #
+        #         blockoverride "right_header_text" {
+        #             text = "UFC_SITUATION_CURRENT_MISSION_THREE_TT"
+        #         }
+        #         blockoverride "right_bottom_content" {
+        #             scrollarea = {
+        #                 layoutpolicy_horizontal = expanding
+        #                 size = { -1 200 }
+        #                 scrollbarpolicy_horizontal = always_off
+        #                 scrollbar_vertical = {
+        #                     using = Scrollbar_Vertical
+        #                 }
+        #
+        #                 scrollwidget = {
+        #                     dynamicgridbox = {
+        #                         layoutpolicy_horizontal = expanding
+        #                         flipdirection = yes
+        #                         position = {10 10}
+        #                         datamodel_wrap = 5
+        #                         maxhorizontalslots = 12
+        #                         datamodel = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('rise_of_the_ufc_mission_counting_tooltip').GetFlagName]"
+        #                         item = {
+        #                             country_flag_small = {}
+        #                         }
+        #                     }
+        #                 }
+        #             }
+        #         }
+        #     }
+        # }
 
 
     }

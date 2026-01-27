@@ -62,23 +62,20 @@
 			}
 			set_variable = {
 				name = rise_of_the_ufc_thirdary_mission_counting
-				value = flag:UFC_SITUATION_MISSION_BLANK
+				value = flag:UFC_SITUATION_MISSION_RANDOM_BLANK
 			}
 			set_variable = {
 				name = rise_of_the_ufc_thirdary_mission_counting_tooltip
-				value = flag:UFC_SITUATION_MISSION_BLANK_TT
+				value = flag:UFC_SITUATION_MISSION_RANDOM_BLANK_TT
 			}
 		}
 	}
 
 	on_monthly = {
-		random_list =  {
-			93 = { }
-			4 = {
-			}
-			3 = {
-			}
-		}
+		# random mission
+		ufc_se_trigger_random_mission = yes
+
+
 		if = {
 			limit = {
 				international_organization:ufc_trade_association = {
@@ -91,7 +88,16 @@
 				trigger_event_non_silently = ufc_situations.1100
 			}
 		}
-
+		if = {
+			limit = {
+				international_organization:ufc_trade_association = {
+					var:ufc_gra_payment_multiplier <= 0.05
+				}
+			}
+			c:UFC = {
+				trigger_event_non_silently = ufc_situations.1155
+			}
+		}
 
 		if = {
 			limit = {
@@ -109,46 +115,59 @@
 				international_organization:ufc_trade_association.var:ufc_gra_payment_multiplier >= 0.05
 			}
 			random_list = {
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1115
 					}
 				}
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1120
 					}
 				}
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1125
 					}
 				}
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1130
 					}
 				}
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1135
 					}
 				}
-				2 = {
+				3 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1140
 					}
 				}
-				1 = {
+				2 = {
 					c:UFC = {
 						trigger_event_non_silently = ufc_situations.1145
 					}
 				}
-				87 = {
+				80 = {
 
 				}
 			}
 		}
+
+		# #黑死病进入马拉加
+		# if = {
+		# 	limit = {
+		# 		location:malaga = {
+		# 			disease_has_stagnated = disease:bubonic_plague
+		# 		}
+		# 		current_year >= 1345
+		# 	}
+		# 	c:UFC = {
+		# 		trigger_event_non_silently = ufc_situations.2100
+		# 	}
+		# }
 	}
 
 

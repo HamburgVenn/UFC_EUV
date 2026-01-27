@@ -46,7 +46,13 @@
 	}
 	
 	can_leave_trigger = {
-		always = no
+		not = {
+			is_leader_of_international_organization = international_organization:ufc_trade_association
+		}
+		opinion = {
+			target = c:UFC
+			value < -100
+		}
 	}
 	
 	auto_leave_trigger = {
@@ -73,7 +79,6 @@
 	
 	ai_desire_to_join = {
 	}
-
 	payments_implemented = {
 		ufc_gra_payment
 	}
@@ -119,5 +124,6 @@
 	}
 
 	ai_issue_voting_bias = {
+
 	}
 }

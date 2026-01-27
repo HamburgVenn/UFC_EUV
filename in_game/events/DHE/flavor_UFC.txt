@@ -1,4 +1,18 @@
 ﻿namespace = flavor_ufc
+
+flavor_ufc.0 = { #Consulate of the Sea
+	type = country_event
+	title = flavor_ufc.0.title
+	desc = flavor_ufc.0.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/event/backgrounds/special/spaceship.dds"
+
+	option = {
+		name = flavor_ufc.0.a
+		custom_tooltip = flavor_ufc.0.a.tt
+	}
+}
+
 flavor_ufc.1 = { #Consulate of the Sea
 	type = country_event
 	title = flavor_ufc.1.title
@@ -95,9 +109,10 @@ flavor_ufc.3 = { #Consulate of the Sea
 		capital = {
 			construct_building = {
 				building_type = building_type:UFC_recruitment_centre
-				instant = yes
 				owner = c:UFC
 				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
 			}
 		}
 		scope:target_character = {
@@ -115,5 +130,383 @@ flavor_ufc.3 = { #Consulate of the Sea
 	option = {
 		name = flavor_ufc.3.b
 		custom_tooltip = flavor_ufc.3.b.tt
+	}
+}
+
+
+flavor_ufc.4 = {
+	type = country_event
+	title = flavor_ufc.4.title
+	desc = flavor_ufc.4.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.8.1
+		to = 1347.8.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = flavor_ufc.4.a
+		add_estate_satisfaction = {
+			type = estate_type:nobles_estate
+			value = 0.1
+		}
+		add_estate_satisfaction = {
+			type = estate_type:burghers_estate
+			value = -0.1
+		}
+		add_gold_to_estate = {
+			estate_type = estate_type:nobles_estate
+			value = 10
+		}
+		add_gold_to_estate = {
+			estate_type = estate_type:burghers_estate
+			value = -10
+		}
+	}
+}
+
+
+flavor_ufc.5 = {
+	type = country_event
+	title = flavor_ufc.5.title
+	desc = flavor_ufc.5.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.8.1
+		to = 1347.8.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = flavor_ufc.5.a
+		change_societal_value = {
+			type = traditionalist_vs_innovative
+			value = -10
+		}
+		change_societal_value = {
+			type = individualism_vs_communalism
+			value = 10
+		}
+	}
+	option = {
+		name = flavor_ufc.5.b
+		change_societal_value = {
+			type = traditionalist_vs_innovative
+			value = 10
+		}
+		change_societal_value = {
+			type = individualism_vs_communalism
+			value = -10
+		}
+	}
+}
+
+flavor_ufc.6 = {
+	type = country_event
+	title = flavor_ufc.6.title
+	desc = flavor_ufc.6.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.8.1
+		to = 1347.8.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = flavor_ufc.6.a
+		add_stability = 3.5
+	}
+}
+
+
+flavor_ufc.7 = {
+	type = country_event
+	title = flavor_ufc.7.title
+	desc = flavor_ufc.7.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1337.6.1
+		to = 1347.8.1
+		monthly_chance = 50
+	}
+
+	illustration_tags = {
+		10 = regulqr
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_ufc.7.a
+		hidden_effect = {
+			every_current_war = {
+				limit = {
+					attacker_leader ?= c:MOR
+				}
+				c:GRA = {
+					white_peace = prev
+				}
+			}
+		}
+		c:GRA = {
+			remove_rival = c:MOR
+			create_alliance = {
+				target = c:MOR
+			}
+		}
+	}
+}
+
+
+flavor_ufc.8 = {
+	type = country_event
+	title = flavor_ufc.8.title
+	desc = flavor_ufc.8.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1346.1.1
+		to = 1348.1.1
+		monthly_chance = 100
+	}
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+	trigger = {
+		location:kaffa = {
+			disease_has_stagnated = disease:bubonic_plague
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			location:messina = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.5
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_ufc.8.a
+		show_as_tooltip = {
+			location:messina = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.5
+				}
+			}
+		}
+	}
+}
+
+flavor_ufc.9 = {
+	type = country_event
+	title = flavor_ufc.9.title
+	desc = flavor_ufc.9.desc
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1346.1.1
+		to = 1350.1.1
+		monthly_chance = 100
+	}
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+	trigger = {
+		location:genoa = {
+			disease_has_stagnated = disease:bubonic_plague
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			location:malaga = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.1
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_ufc.9.a
+		show_as_tooltip = {
+			location:malaga = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.1
+				}
+			}
+		}
+		custom_tooltip = flavor_ufc.9.a.tt
+	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = flavor_ufc.10
+					days = 128
+				}
+			}
+		}
+	}
+}
+
+flavor_ufc.10 = {
+	type = country_event
+	title = flavor_ufc.10.title
+	desc = flavor_ufc.10.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+		character:cas_alfonso_xi_burgundy = {
+			save_scope_as = target_character
+		}
+	}
+	option = {
+		name = flavor_ufc.10.a
+		province:cadiz_province = {
+			every_location_in_province = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.2
+				}
+			}
+		}
+		province:malaga_province = {
+			every_location_in_province = {
+				change_disease_presence = {
+					disease = disease:bubonic_plague
+					value = 0.1
+				}
+			}
+		}
+		c:CAS = {
+			add_yearly_manpower = -3
+		}
+		c:MOR = {
+			add_yearly_manpower = -1.5
+		}
+		c:GRA = {
+			add_yearly_manpower = -1.5
+		}
+		trigger_event_non_silently = {
+			id = flavor_ufc.11
+			days = 32
+		}
+	}
+}
+
+flavor_ufc.11 = {
+	type = country_event
+	title = flavor_ufc.11.title
+	desc = flavor_ufc.11.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+		character:cas_alfonso_xi_burgundy = {
+			save_scope_as = target_character
+		}
+	}
+	option = {
+		name = flavor_ufc.11.a
+		show_as_tooltip = {
+			kill_character = {
+				target = character:cas_alfonso_xi_burgundy
+				location = location:gibraltar
+				disease = disease:bubonic_plague
+			}
+		}
+		c:MOR = {
+			add_truce_with = {
+				target = c:CAS
+			}
+		}
+		c:GRA = {
+			add_truce_with = {
+				target = c:CAS
+			}
+		}
+		trigger_event_non_silently = {
+			id = ufc_situations.2100
+			days = 32
+		}
+	}
+	after = {
+		hidden_effect = {
+			trigger_event_non_silently = {
+				id = flavor_ufc.12
+				days = 256
+			}
+		}
+	}
+}
+
+flavor_ufc.12 = {
+	type = country_event
+	title = flavor_ufc.12.title
+	desc = flavor_ufc.12.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+		character:cas_pedro_i_burgundy = {
+			save_scope_as = target_character
+		}
+	}
+	option = {
+		name = flavor_ufc.12.a
+		c:GRA = {
+			add_opinion = {
+				modifier = opinion_ufc_petro_in_cas
+				target = c:CAS
+			}
+		}
+		c:CAS = {
+			add_opinion = {
+				modifier = opinion_ufc_petro_in_cas
+				target = c:GRA
+			}
+		}
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 15
+			}
+		}
 	}
 }

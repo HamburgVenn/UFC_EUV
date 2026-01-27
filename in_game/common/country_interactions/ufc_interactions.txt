@@ -1,0 +1,68 @@
+﻿ufc_invite_to_ufc_trade_association = {
+	type = diplomacy
+	category = CATEGORY_FRIENDLY_ACTIONS
+
+	ai_limit_per_check = 1
+
+	potential = {
+		scope:actor = {
+			is_leader_of_international_organization = international_organization:ufc_trade_association
+		}
+	}
+
+	allow = {
+		scope:recipient = {
+			opinion = {
+				target = scope:actor
+				value > 25
+			}
+			not = {
+				is_member_of_international_organization = international_organization:ufc_trade_association
+			}
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = country
+		target_flag = recipient
+		name = "choose_country"
+		column = {
+			data = name
+		}
+		visible = {
+			within_diplomatic_range = c:UFC
+		}
+		enabled = {
+			international_organization:ufc_trade_association = {
+				always = yes
+			}
+		}
+	}
+	accept = {
+		add = {
+			desc = "game_concept_rival"
+			if = {
+				limit = {
+					scope:recipient = {
+						is_rival_of = scope:actor
+					}
+				}
+				value = -100
+			}
+		}
+	}
+	diplo_chance = {
+		base = -10
+		rank = -2
+		opinion = 0.4
+		#relative_strength = 200
+		border_distance = -0.1
+	}
+	effect = {
+		international_organization:ufc_trade_association = {
+			add_country_to_international_organization = scope:recipient
+		}
+	}
+	ai_will_do = {
+	}
+}
