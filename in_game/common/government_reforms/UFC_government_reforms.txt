@@ -22,5 +22,17 @@
         government_reform_slots = 1
         num_possible_rivals = -10
     }
+    country_modifier = {
+        trade_efficiency = 0.1
+        improve_relation_impact = 0.25
+        scale = {
+            min = 0
+            max = 1
+            add = {
+                value = international_organization:ufc_trade_association.var:merchant_fenderal_impact
+                divide = 100
+            }
+        }
+    }
     years = 2
 }

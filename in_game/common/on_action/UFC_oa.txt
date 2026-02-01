@@ -4,6 +4,12 @@
     }
 }
 
+on_winning_war = {
+    on_actions = {
+        UFC_on_winning_war
+    }
+}
+
 UFC_on_game_start = {
     effect = {
         character:gra_fatima_bint_al_ahmar_nasrid ?= {
@@ -22,6 +28,75 @@ UFC_on_game_start = {
         }
         c:UFC = {
             trigger_event_non_silently = flavor_ufc.0
+        }
+    }
+}
+
+#root = country, scope:winner = country, scope:loser = country, scope:war = war
+UFC_on_winning_war = {
+    effect = {
+        #for the win or lose the bet of the hundreds years of war
+        if = {
+            limit = {
+                or = {
+                    and = {
+                        situation:rise_of_the_ufc = {
+                            var:rise_of_the_ufc_support_hundred_years_war = flag:UFC_SITUATION_SUPPORT_FRA
+                        }
+                        scope:winner = {
+                            has_or_had_tag = FRA
+                        }
+                        scope:loser = {
+                            has_or_had_tag = ENG
+                        }
+                    }
+                    and = {
+                        situation:rise_of_the_ufc = {
+                            var:rise_of_the_ufc_support_hundred_years_war = flag:UFC_SITUATION_SUPPORT_ENG
+                        }
+                        scope:winner = {
+                            has_or_had_tag = ENG
+                        }
+                        scope:loser = {
+                            has_or_had_tag = FRA
+                        }
+                    }
+                }
+            }
+            c:UFC = {
+                trigger_event_non_silently = ufc_situations.1030
+            }
+        }
+        if = {
+            limit = {
+                or = {
+                    and = {
+                        situation:rise_of_the_ufc = {
+                            var:rise_of_the_ufc_support_hundred_years_war = flag:UFC_SITUATION_SUPPORT_ENG
+                        }
+                        scope:winner = {
+                            has_or_had_tag = FRA
+                        }
+                        scope:loser = {
+                            has_or_had_tag = ENG
+                        }
+                    }
+                    and = {
+                        situation:rise_of_the_ufc = {
+                            var:rise_of_the_ufc_support_hundred_years_war = flag:UFC_SITUATION_SUPPORT_FRA
+                        }
+                        scope:winner = {
+                            has_or_had_tag = ENG
+                        }
+                        scope:loser = {
+                            has_or_had_tag = FRA
+                        }
+                    }
+                }
+            }
+            c:UFC = {
+                trigger_event_non_silently = ufc_situations.1035
+            }
         }
     }
 }

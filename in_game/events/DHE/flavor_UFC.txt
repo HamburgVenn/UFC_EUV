@@ -510,3 +510,130 @@ flavor_ufc.12 = {
 		}
 	}
 }
+
+
+flavor_ufc.13 = {
+	type = country_event
+	title = flavor_ufc.13.title
+	desc = flavor_ufc.13.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+		character:gra_ibn_khatib_script = {
+			save_scope_as = target_character
+		}
+	}
+	option = {
+		name = flavor_ufc.13.a
+		c:GRA = {
+			add_country_modifier = {
+				modifier = segregate_the_infected
+			}
+		}
+		set_variable = {
+			name = ufc_variable_the_aftermath_of_black_death
+			value = 2
+		}
+		add_country_modifier = {
+			modifier = ufc_modifier_the_aftermath_of_black_death
+			years = 100
+			size = root.var:ufc_variable_the_aftermath_of_black_death
+		}
+		custom_tooltip = flavor_ufc.13.a.tt
+		every_country = {
+			limit = {
+				capital_in_old_world_trigger = yes
+			}
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 100
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			trigger_event_non_silently = {
+				id = flavor_ufc.14
+				days = 128
+			}
+		}
+	}
+}
+
+flavor_ufc.14 = {
+	type = country_event
+	title = flavor_ufc.14.title
+	desc = flavor_ufc.14.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+
+	}
+	option = {
+		name = flavor_ufc.14.a
+		change_societal_value = {
+			type = centralization_vs_decentralization
+			value = societal_value_move_to_left
+		}
+		change_societal_value = {
+			type = serfdom_vs_free_subjects
+			value = societal_value_move_to_left
+		}
+		change_societal_value = {
+			type = individualism_vs_communalism
+			value = societal_value_move_to_right
+		}
+	}
+	option = {
+		name = flavor_ufc.14.b
+		change_societal_value = {
+			type = centralization_vs_decentralization
+			value = societal_value_move_to_right
+		}
+		change_societal_value = {
+			type = serfdom_vs_free_subjects
+			value = societal_value_move_to_right
+		}
+		change_societal_value = {
+			type = individualism_vs_communalism
+			value = societal_value_move_to_left
+		}
+	}
+	after = {
+		hidden_effect = {
+			trigger_event_non_silently = {
+				id = flavor_ufc.14
+				days = 256
+			}
+		}
+	}
+}
+
+flavor_ufc.15 = {
+	type = country_event
+	title = flavor_ufc.15.title
+	desc = flavor_ufc.15.desc
+	fire_only_once = yes
+	image = "gfx/interface/illustrations/situation/black_death.dds"
+
+	immediate = {
+
+	}
+	option = {
+		name = flavor_ufc.15.a
+		custom_tooltip = flavor_ufc.15.a.tt
+		change_variable = {
+			name = ufc_variable_the_aftermath_of_black_death
+			subtract = 1
+		}
+		c:GRA = {
+			remove_country_modifier = segregate_the_infected
+		}
+	}
+	after = {
+
+	}
+}

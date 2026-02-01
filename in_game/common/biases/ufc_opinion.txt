@@ -20,3 +20,23 @@ opinion_ufc_petro_in_cas = {
 	value = 100
 	yearly_decay = -1
 }
+
+opinion_ufc_hundred_years_war_approve = {
+	value = 50
+	yearly_decay = -2
+}
+
+opinion_ufc_hundred_years_war_disapprove = {
+	value = -50
+	yearly_decay = 2
+}
+
+opinion_ufc_hundred_years_war_thanks = {
+	value = 25
+	yearly_decay = -3
+}
+
+opinion_ufc_hundred_years_war_win_the_bet = {
+	value = 100
+	yearly_decay = -1
+}

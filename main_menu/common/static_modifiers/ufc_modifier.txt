@@ -62,3 +62,28 @@ ufc_modifier_slow_expansion = {
 	stability_investment = standard_stability_investment
 	trade_efficiency = medium_trade_efficiency_bonus
 }
+
+ufc_modifier_self_corrosion = {
+	game_data = {
+		category = character
+	}
+	character_cabinet_efficiency = -0.5
+	character_life_expectancy = 20
+}
+
+ufc_modifier_relief_the_hatred = {
+	game_data = {
+		category = character
+	}
+	country_cabinet_efficiency = 0.25
+	character_life_expectancy = 20
+}
+
+ufc_modifier_the_aftermath_of_black_death = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+	global_production_efficiency = -0.05
+	global_merchant_capacity_modifier = -0.4
+}
