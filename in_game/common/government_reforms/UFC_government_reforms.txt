@@ -34,5 +34,19 @@
             }
         }
     }
+    country_modifier = {
+        potential_trigger = {
+            has_variable = ufc_variable_the_legacy_of_fatima_nasrid
+        }
+        monthly_republican_tradition = 0.1
+    }
+    country_modifier = {
+        potential_trigger = {
+           leader = {
+               has_character_modifier = ufc_modifier_no_more_chasing
+           }
+        }
+        monthly_towards_jurisprudence = societal_value_large_monthly_move
+    }
     years = 2
 }

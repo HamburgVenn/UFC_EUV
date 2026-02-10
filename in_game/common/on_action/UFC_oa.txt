@@ -10,6 +10,19 @@ on_winning_war = {
     }
 }
 
+
+on_character_death = {
+    on_actions = {
+        UFC_on_character_death
+    }
+}
+
+on_cabinet_assigned = {
+    on_actions = {
+        UFC_on_cabinet_assigned
+    }
+}
+
 UFC_on_game_start = {
     effect = {
         character:gra_fatima_bint_al_ahmar_nasrid ?= {
@@ -97,6 +110,32 @@ UFC_on_winning_war = {
             c:UFC = {
                 trigger_event_non_silently = ufc_situations.1035
             }
+        }
+    }
+}
+
+#root = country, scope:target = character who dies
+UFC_on_character_death = {
+    effect = {
+        if = {
+            limit = {
+                scope:target = character:gra_fatima_bint_al_ahmar_nasrid
+            }
+            c:UFC = {
+                trigger_event_non_silently = flavor_ufc.16
+            }
+        }
+    }
+}
+
+#root = country, scope:target = character who got assigned to the cabinet
+UFC_on_cabinet_assigned = {
+    effect = {
+        if = {
+            limit = {
+                has_country_modifier = ufc_modifier_free_assign_cabinet
+            }
+            remove_country_modifier = ufc_modifier_free_assign_cabinet
         }
     }
 }

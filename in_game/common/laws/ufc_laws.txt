@@ -76,3 +76,32 @@ ufc_department_law_academic_department_set = {
 		years = 2
 	}
 }
+
+ufc_department_law_human_resource_set = {
+	law_category = administrative
+
+	potential = {
+		has_unlocked_law_trigger = { type = ufc_department_law_human_resource_set }
+	}
+
+	ufc_initialize_human_resource_department = {
+		country_modifier = {
+			global_pop_promotion_speed_modifier = 0.1
+			monthly_towards_free_subjects = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			burghers_estate peasants_estate
+		}
+		years = 2
+	}
+
+	ufc_ban_human_resource_department = {
+		country_modifier = {
+			monthly_towards_serfdom = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+}

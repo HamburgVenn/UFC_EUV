@@ -531,23 +531,31 @@ flavor_ufc.13 = {
 				modifier = segregate_the_infected
 			}
 		}
-		set_variable = {
-			name = ufc_variable_the_aftermath_of_black_death
-			value = 2
-		}
 		add_country_modifier = {
 			modifier = ufc_modifier_the_aftermath_of_black_death
 			years = 100
-			size = root.var:ufc_variable_the_aftermath_of_black_death
+			size = {
+				value = 2
+			}
 		}
 		custom_tooltip = flavor_ufc.13.a.tt
-		every_country = {
-			limit = {
-				capital_in_old_world_trigger = yes
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_in_old_world_trigger = yes
+				}
+				add_country_modifier = {
+					modifier = ufc_modifier_the_aftermath_of_black_death
+					years = 100
+				}
 			}
-			add_country_modifier = {
-				modifier = ufc_modifier_the_aftermath_of_black_death
-				years = 100
+		}
+		show_as_tooltip = {
+			c:SWE = {
+				add_country_modifier = {
+					modifier = ufc_modifier_the_aftermath_of_black_death
+					years = 100
+				}
 			}
 		}
 	}
@@ -625,9 +633,15 @@ flavor_ufc.15 = {
 	option = {
 		name = flavor_ufc.15.a
 		custom_tooltip = flavor_ufc.15.a.tt
-		change_variable = {
-			name = ufc_variable_the_aftermath_of_black_death
-			subtract = 1
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 1
+				}
+			}
 		}
 		c:GRA = {
 			remove_country_modifier = segregate_the_infected
@@ -635,5 +649,24 @@ flavor_ufc.15 = {
 	}
 	after = {
 
+	}
+}
+
+flavor_ufc.16 = {
+	type = country_event
+	title = flavor_ufc.16.title
+	desc = flavor_ufc.16.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+	immediate = {
+
+	}
+	option = {
+		name = flavor_ufc.16.a
+		custom_tooltip = flavor_ufc.16.a.tt
+		set_variable = ufc_variable_the_legacy_of_fatima_nasrid
 	}
 }

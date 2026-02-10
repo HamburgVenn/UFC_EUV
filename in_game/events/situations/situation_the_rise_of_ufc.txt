@@ -1,5 +1,5 @@
 ﻿namespace = ufc_situations
-ufc_situations.1000 = { #Consulate of the Sea
+ufc_situations.1000 = {
 	type = country_event
 	title = ufc_situations.1000.title
 	desc = ufc_situations.1000.desc
@@ -40,7 +40,7 @@ ufc_situations.1000 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1005 = { #Consulate of the Sea
+ufc_situations.1005 = {
 	type = country_event
 	title = ufc_situations.1005.title
 	desc = ufc_situations.1005.desc
@@ -99,7 +99,7 @@ ufc_situations.1005 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1010 = { #Consulate of the Sea
+ufc_situations.1010 = {
 	type = country_event
 	title = ufc_situations.1010.title
 	desc = ufc_situations.1010.desc
@@ -158,7 +158,7 @@ ufc_situations.1010 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1015 = { #Consulate of the Sea
+ufc_situations.1015 = {
 	type = country_event
 	title = ufc_situations.1015.title
 	desc = ufc_situations.1015.desc
@@ -205,7 +205,7 @@ ufc_situations.1015 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1020 = { #Consulate of the Sea
+ufc_situations.1020 = {
 	type = country_event
 	title = ufc_situations.1020.title
 	desc = ufc_situations.1020.desc
@@ -268,7 +268,7 @@ ufc_situations.1020 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1025 = { #Consulate of the Sea
+ufc_situations.1025 = {
 	type = country_event
 	title = ufc_situations.1025.title
 	desc = ufc_situations.1025.desc
@@ -418,7 +418,7 @@ ufc_situations.1035 = {
 	}
 }
 
-ufc_situations.1100 = { #Consulate of the Sea
+ufc_situations.1100 = {
 	type = country_event
 	title = ufc_situations.1100.title
 	desc = ufc_situations.1100.desc
@@ -446,7 +446,7 @@ ufc_situations.1100 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1105 = { #Consulate of the Sea
+ufc_situations.1105 = {
 	type = country_event
 	title = ufc_situations.1105.title
 	desc = ufc_situations.1105.desc
@@ -573,7 +573,7 @@ ufc_situations.1110 = {
 
 #random events
 
-ufc_situations.1115 = { #Consulate of the Sea
+ufc_situations.1115 = {
 	type = country_event
 	title = ufc_situations.1115.title
 	desc = ufc_situations.1115.desc
@@ -599,7 +599,7 @@ ufc_situations.1115 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1120 = { #Consulate of the Sea
+ufc_situations.1120 = {
 	type = country_event
 	title = ufc_situations.1120.title
 	desc = ufc_situations.1120.desc
@@ -636,7 +636,7 @@ ufc_situations.1120 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1125 = { #Consulate of the Sea
+ufc_situations.1125 = {
 	type = country_event
 	title = ufc_situations.1125.title
 	desc = ufc_situations.1125.desc
@@ -674,7 +674,7 @@ ufc_situations.1125 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1130 = { #Consulate of the Sea
+ufc_situations.1130 = {
 	type = country_event
 	title = ufc_situations.1130.title
 	desc = ufc_situations.1130.desc
@@ -710,7 +710,7 @@ ufc_situations.1130 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1135 = { #Consulate of the Sea
+ufc_situations.1135 = {
 	type = country_event
 	title = ufc_situations.1135.title
 	desc = ufc_situations.1135.desc
@@ -754,7 +754,7 @@ ufc_situations.1135 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.1140 = { #Consulate of the Sea
+ufc_situations.1140 = {
 	type = country_event
 	title = ufc_situations.1140.title
 	desc = ufc_situations.1140.desc
@@ -851,10 +851,6 @@ ufc_situations.1145 = {
 			value = root.monthly_income_trade_and_tax
 			multiply = -3
 		}
-		# set_variable = {
-		# 	name = ufc_var_current_income
-		# 	value = root.monthly_income_trade_and_tax
-		# }
 		save_scope_value_as = {
 			name = ufc_var_current_income
 			value = root.monthly_income_trade_and_tax
@@ -946,7 +942,7 @@ ufc_situations.1155 = {
 	}
 }
 
-ufc_situations.1160 = { #Consulate of the Sea
+ufc_situations.1160 = {
 	type = country_event
 	title = ufc_situations.1160.title
 	desc = ufc_situations.1160.desc
@@ -2217,7 +2213,17 @@ ufc_situations.1395 = {
 				cost_multiplier_reason = "game_concept_event"
 			}
 		}
-		#降低一点黑死病余波
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
 	}
 	option = {
 		name = ufc_situations.1395.b
@@ -2227,7 +2233,17 @@ ufc_situations.1395 = {
 				value = 2
 			}
 		}
-		#降低一点黑死病余波
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
 	}
 	option = {
 		name = ufc_situations.1395.c
@@ -2544,7 +2560,7 @@ ufc_situations.1425 = {
 }
 
 #伊本白图泰上台
-ufc_situations.2100 = { #Consulate of the Sea
+ufc_situations.2100 = {
 	type = country_event
 	title = ufc_situations.2100.title
 	desc = ufc_situations.2100.desc
@@ -2590,12 +2606,12 @@ ufc_situations.2100 = { #Consulate of the Sea
 
 	option = {
 		name = ufc_situations.2100.a
-		situation:rise_of_the_ufc = {
-			set_variable = {
-				name = rise_of_the_ufc_blake_death_influence
-				value = 100
-			}
-		}
+		# situation:rise_of_the_ufc = {
+		# 	set_variable = {
+		# 		name = rise_of_the_ufc_blake_death_influence
+		# 		value = 100
+		# 	}
+		# }
 		character:mor_ibn_battuta = {
 		 	move_country = c:GRA
 		}
@@ -2622,7 +2638,7 @@ ufc_situations.2100 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2105 = { #Consulate of the Sea
+ufc_situations.2105 = {
 	type = country_event
 	title = ufc_situations.2105.title
 	desc = ufc_situations.2105.desc
@@ -2642,9 +2658,7 @@ ufc_situations.2105 = { #Consulate of the Sea
 
 	option = {
 		name = ufc_situations.2105.a
-		# character:mor_ibn_battuta = {
-		# 	move_country = c:UFC
-		# }
+		custom_tooltip = ufc_situations.2105.a.tt
 		c:GRA = {
 			add_prestige = 20
 			add_estate_satisfaction = {
@@ -2663,7 +2677,7 @@ ufc_situations.2105 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2110 = { #Consulate of the Sea
+ufc_situations.2110 = {
 	type = country_event
 	title = ufc_situations.2110.title
 	desc = ufc_situations.2110.desc
@@ -2698,7 +2712,7 @@ ufc_situations.2110 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2115 = { #Consulate of the Sea
+ufc_situations.2115 = {
 	type = country_event
 	title = ufc_situations.2115.title
 	desc = ufc_situations.2115.desc
@@ -2747,7 +2761,7 @@ ufc_situations.2115 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2120 = { #Consulate of the Sea
+ufc_situations.2120 = {
 	type = country_event
 	title = ufc_situations.2120.title
 	desc = ufc_situations.2120.desc
@@ -2770,9 +2784,14 @@ ufc_situations.2120 = { #Consulate of the Sea
 
 	option = {
 		name = ufc_situations.2120.a
+		custom_tooltip = ufc_situations.2120.a.tt
 		character:mor_ibn_battuta = {
 			move_country = c:UFC
 			change_character_estate = estate_type:nobles_estate
+		}
+		add_country_modifier = {
+			modifier = ufc_modifier_free_assign_cabinet
+			months = 1
 		}
 		hidden_effect = {
 			c:UFC = {
@@ -2785,7 +2804,7 @@ ufc_situations.2120 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2125 = { #Consulate of the Sea
+ufc_situations.2125 = {
 	type = country_event
 	title = ufc_situations.2125.title
 	desc = ufc_situations.2125.desc
@@ -2822,7 +2841,7 @@ ufc_situations.2125 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2130 = { #Consulate of the Sea
+ufc_situations.2130 = {
 	type = country_event
 	title = ufc_situations.2130.title
 	desc = ufc_situations.2130.desc
@@ -2844,7 +2863,7 @@ ufc_situations.2130 = { #Consulate of the Sea
 		name = ufc_situations.2130.a
 		add_country_modifier = {
 			modifier = ufc_modifier_slow_expansion
-			years = 10
+			years = 20
 		}
 		hidden_effect = {
 			c:UFC = {
@@ -2857,7 +2876,7 @@ ufc_situations.2130 = { #Consulate of the Sea
 	}
 }
 
-ufc_situations.2135 = { #Consulate of the Sea
+ufc_situations.2135 = {
 	type = country_event
 	title = ufc_situations.2135.title
 	desc = ufc_situations.2135.desc
@@ -2889,10 +2908,16 @@ ufc_situations.2135 = { #Consulate of the Sea
 
 	option = {
 		name = ufc_situations.2135.a
+		custom_tooltip = ufc_situations.2135.a.tt
 		scope:target_character = {
-			start_work_of_art = {
-				quality = 95
-				work_of_art_type = work_of_art_type:novel
+			move_country = c:UFC
+		}
+		show_as_tooltip = {
+			scope:target_character = {
+				start_work_of_art = {
+					quality = 95
+					work_of_art_type = work_of_art_type:novel
+				}
 			}
 		}
 		# location:malaga = {
@@ -2904,12 +2929,22 @@ ufc_situations.2135 = { #Consulate of the Sea
 		# 	}
 		# }
 	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2150
+					days = 64
+				}
+			}
+		}
+	}
 }
 
 
 
 
-ufc_situations.2150 = { #Consulate of the Sea
+ufc_situations.2150 = {
 	type = country_event
 	title = ufc_situations.2150.title
 	desc = ufc_situations.2150.desc
@@ -2925,7 +2960,10 @@ ufc_situations.2150 = { #Consulate of the Sea
 		character:mor_ibn_battuta = {
 			save_scope_as = target_character
 		}
-		set_variable = unlocked_law_ufc_monetary_law
+		unlock_law_effect = {
+			type = ufc_monetary_law
+		}
+		# set_variable = unlocked_law_ufc_monetary_law
 	}
 
 	option = {
@@ -2936,9 +2974,19 @@ ufc_situations.2150 = { #Consulate of the Sea
 		name = ufc_situations.2150.b
 		add_policy = policy:ufc_european_monetary_policy
 	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2155
+					days = 64
+				}
+			}
+		}
+	}
 }
 
-ufc_situations.2155 = { #Consulate of the Sea
+ufc_situations.2155 = {
 	type = country_event
 	title = ufc_situations.2155.title
 	desc = ufc_situations.2155.desc
@@ -2964,9 +3012,2674 @@ ufc_situations.2155 = { #Consulate of the Sea
 				modifier = ufc_modifier_dept_of_love
 			}
 		}
+		custom_tooltip = ufc_situations.2155.a.tt
+	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2160
+					days = 128
+				}
+			}
+		}
 	}
 }
 
+
+ufc_situations.2160 = {
+	type = country_event
+	title = ufc_situations.2160.title
+	desc = ufc_situations.2160.desc
+	fire_only_once = yes
+
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+		character:gra_fatima_bint_al_ahmar_nasrid = {
+			save_scope_as = target_character_1
+		}
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character_2
+		}
+	}
+
+	option = {
+		name = ufc_situations.2160.a
+		set_new_ruler = character:mor_ibn_battuta
+
+	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2165
+					days = 128
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2165 = {
+	type = country_event
+	title = ufc_situations.2165.title
+	desc = ufc_situations.2165.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2165.a
+		c:GRA = {
+			every_market_center_in_country = {
+				add_food_percentage = -0.2
+			}
+		}
+		character:mor_ibn_battuta = {
+			add_adm = 5
+		}
+	}
+	after = {
+		# hidden_effect = {
+		# 	c:UFC = {
+		# 		trigger_event_non_silently = {
+		# 			id = ufc_situations.2170
+		# 			days = 128
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+ufc_situations.2170 = {
+	type = country_event
+	title = ufc_situations.2170.title
+	desc = ufc_situations.2170.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+	dynamic_historical_event = {
+		tag = UFC
+		from = 1348.1.1
+		to = 1368.4.1
+		monthly_chance = 100
+	}
+	trigger = {
+		or = {
+			had_situation_trigger = {
+				situation = black_death
+			}
+			is_situation_active = situation:black_death
+		}
+		not = {
+			international_organization:ufc_trade_association = {
+				any_international_organization_member = {
+					country_has_disease = disease:bubonic_plague
+				}
+			}
+		}
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2170.a
+		custom_tooltip = ufc_situations.2170.a.tt
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2175
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2175 = {
+	type = country_event
+	title = ufc_situations.2175.title
+	desc = ufc_situations.2175.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2175.a
+		custom_tooltip = ufc_situations.2175.a.tt
+		set_variable = ufc_variable_upgrade_raw_material_collection_center
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2180
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2180 = {
+	type = country_event
+	title = ufc_situations.2180.title
+	desc = ufc_situations.2180.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2180.a
+		unlock_law_effect = {
+			type = ufc_department_law_human_resource_set
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2185
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2185 = {
+	type = country_event
+	title = ufc_situations.2185.title
+	desc = ufc_situations.2185.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2185.a
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = 5
+			}
+		}
+		custom_tooltip = ufc_io.influence_small_ascend.tt
+	}
+
+	option = {
+		name = ufc_situations.2185.b
+		international_organization:ufc_trade_association = {
+			change_variable = {
+				name = merchant_fenderal_impact
+				add = -5
+			}
+		}
+		custom_tooltip = ufc_io.influence_small_descend.tt
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_medium_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.10
+				}
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			c:UFC = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2190
+					days = 64
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2190 = {
+	type = country_event
+	title = ufc_situations.2190.title
+	desc = ufc_situations.2190.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2190.a
+		custom_tooltip = ufc_situations.2190.a.tt
+		unlock_building_effect = {
+			type = UFC_trade_embassy
+		}
+	}
+
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2195
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2195 = {
+	type = country_event
+	title = ufc_situations.2195.title
+	desc = ufc_situations.2195.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2195.a
+		custom_tooltip = ufc_situations.2195.a.tt
+
+		random_list = {
+			100 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2196
+					days = 32
+                }
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2195.b
+		custom_tooltip = ufc_situations.2195.b.tt
+		random_list = {
+			95 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2197
+					days = 128
+				}
+			}
+			5 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2199
+					days = 128
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2195.c
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2200
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2196 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2196.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:alexandria = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 3
+		}
+		location:alexandria = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2197 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2197.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:cairo = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 4
+		}
+		location:cairo = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2199 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2199.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:cairo = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.1
+		}
+		location:cairo = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2200 = {
+	type = country_event
+	title = ufc_situations.2200.title
+	desc = ufc_situations.2200.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2200.a
+		custom_tooltip = ufc_situations.2200.a.tt
+
+		random_list = {
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2201
+					days = 256
+				}
+			}
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2204
+					days = 256
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2200.b
+		custom_tooltip = ufc_situations.2200.b.tt
+		random_list = {
+			85 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2202
+					days = 256
+				}
+			}
+			15 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2204
+					days = 256
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2200.c
+		custom_tooltip = ufc_situations.2200.c.tt
+		random_list = {
+			95 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2203
+					days = 256
+				}
+			}
+			5 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2204
+					days = 256
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2200.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2205
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2201 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2201.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:mecca = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 10
+		}
+		location:mecca = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2202 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2202.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:jerusalem = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 8
+		}
+		location:jerusalem = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2203 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2203.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:damascus = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 6
+		}
+		location:damascus = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2204 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2204.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:damascus = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.3
+		}
+	}
+}
+
+ufc_situations.2205 = {
+	type = country_event
+	title = ufc_situations.2205.title
+	desc = ufc_situations.2205.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2205.a
+		custom_tooltip = ufc_situations.2205.a.tt
+
+		random_list = {
+			80 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2206
+					days = 256
+				}
+			}
+			20 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2209
+					days = 256
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2205.b
+		custom_tooltip = ufc_situations.2205.b.tt
+		random_list = {
+			70 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2202
+					days = 256
+				}
+			}
+			30 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2204
+					days = 256
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2205.c
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2210
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2206 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2206.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:baghdad = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 9
+		}
+		location:baghdad = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2207 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2207.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:tabriz = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:tabriz = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2209 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2209.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:tabriz = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+
+ufc_situations.2210 = {
+	type = country_event
+	title = ufc_situations.2210.title
+	desc = ufc_situations.2210.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2210.a
+		custom_tooltip = ufc_situations.2210.a.tt
+
+		random_list = {
+			60 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2211
+					days = 384
+				}
+			}
+			40 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2214
+					days = 384
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2210.b
+		custom_tooltip = ufc_situations.2210.b.tt
+		random_list = {
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2212
+					days = 384
+				}
+			}
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2214
+					days = 384
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2210.c
+		custom_tooltip = ufc_situations.2210.c.tt
+		random_list = {
+			85 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2213
+					days = 384
+				}
+			}
+			15 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2214
+					days = 384
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2210.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2215
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2211 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2211.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:taizz = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 18
+		}
+		location:taizz = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2212 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2212.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:sana_yemen = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:sana_yemen = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2213 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2213.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:adan = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 9
+		}
+		location:adan = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2214 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2214.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:sana_yemen = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2215 = {
+	type = country_event
+	title = ufc_situations.2215.title
+	desc = ufc_situations.2215.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2215.a
+		custom_tooltip = ufc_situations.2215.a.tt
+
+		random_list = {
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2216
+					days = 512
+				}
+			}
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2219
+					days = 512
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2215.b
+		custom_tooltip = ufc_situations.2215.b.tt
+		random_list = {
+			60 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2217
+					days = 512
+				}
+			}
+			40 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2219
+					days = 512
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2215.c
+		custom_tooltip = ufc_situations.2215.c.tt
+		random_list = {
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2218
+					days = 512
+				}
+			}
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2219
+					days = 512
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2215.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2220
+			days = 128
+		}
+	}
+}
+
+
+ufc_situations.2216 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2216.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:mogadishu = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 15
+		}
+		location:mogadishu = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2217 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2217.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:mombasa = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 18
+		}
+		location:mombasa = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2218 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2218.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:kilwa_kisiwani = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 24
+		}
+		location:kilwa_kisiwani = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2219 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2219.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:kilwa_kisiwani = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2220 = {
+	type = country_event
+	title = ufc_situations.2220.title
+	desc = ufc_situations.2220.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2220.a
+		custom_tooltip = ufc_situations.2220.a.tt
+
+		random_list = {
+			80 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2221
+					days = 384
+				}
+			}
+			20 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2224
+					days = 384
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2220.b
+		custom_tooltip = ufc_situations.2220.b.tt
+		random_list = {
+			70 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2222
+					days = 512
+				}
+			}
+			30 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2224
+					days = 512
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2220.c
+		custom_tooltip = ufc_situations.2220.c.tt
+		random_list = {
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2223
+					days = 512
+				}
+			}
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2224
+					days = 512
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2220.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2225
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2221 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2221.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:bursa = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 9
+		}
+		location:bursa = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2222 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2222.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:astrakhan = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:astrakhan = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2223 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2223.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:sarai_al_jadid = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 15
+		}
+		location:sarai_al_jadid = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2224 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2224.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:sarai_al_jadid = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2225 = {
+	type = country_event
+	title = ufc_situations.2225.title
+	desc = ufc_situations.2225.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2225.a
+		custom_tooltip = ufc_situations.2225.a.tt
+
+		random_list = {
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2226
+					days = 256
+				}
+			}
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2229
+					days = 256
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2225.b
+		custom_tooltip = ufc_situations.2225.b.tt
+		random_list = {
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2227
+					days = 256
+				}
+			}
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2229
+					days = 256
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2225.c
+		custom_tooltip = ufc_situations.2225.c.tt
+		random_list = {
+			65 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2228
+					days = 384
+				}
+			}
+			35 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2229
+					days = 384
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2225.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2230
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2226 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2226.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:constantinople = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 6
+		}
+		c:GEN = {
+			add_gold = {
+				value = root.monthly_income_trade_and_tax
+				multiply = 6
+			}
+		}
+		location:constantinople = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+ufc_situations.2227 = {
+	type = country_event
+	title = ufc_situations.2227.title
+	desc = ufc_situations.2227.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:constantinople = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = ufc_situations.2227.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -3
+		}
+		add_research_progress = research_progress_ultimate_bonus
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_medium_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.1
+				}
+			}
+		}
+	}
+}
+ufc_situations.2228 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2228.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:kyiv = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 7.5
+		}
+		c:GEN = {
+			add_gold = {
+				value = root.monthly_income_trade_and_tax
+				multiply = 7.5
+			}
+		}
+		location:kyiv = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2229 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2229.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:sarai_al_jadid = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2230 = {
+	type = country_event
+	title = ufc_situations.2230.title
+	desc = ufc_situations.2230.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2230.a
+		custom_tooltip = ufc_situations.2230.a.tt
+
+		random_list = {
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2231
+					days = 256
+				}
+			}
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2234
+					days = 256
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2230.b
+		custom_tooltip = ufc_situations.2230.b.tt
+		random_list = {
+			65 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2232
+					days = 256
+				}
+			}
+			35 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2234
+					days = 256
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2230.c
+		custom_tooltip = ufc_situations.2230.c.tt
+		random_list = {
+			75 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2233
+					days = 384
+				}
+			}
+			25 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2234
+					days = 384
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2230.d
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2235
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2231 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2231.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:samarkand = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 15
+		}
+		location:samarkand = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2232 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2232.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:bukhara = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 15
+		}
+		location:bukhara = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2233 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2233.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:kabul = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:kabul = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+}
+
+ufc_situations.2234 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2234.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:samarkand = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2235 = {
+	type = country_event
+	title = ufc_situations.2235.title
+	desc = ufc_situations.2235.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2235.a
+		custom_tooltip = ufc_situations.2235.a.tt
+
+		random_list = {
+			35 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2236
+					days = 768
+				}
+			}
+			65 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2239
+					days = 768
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2235.b
+		custom_tooltip = ufc_situations.2235.b.tt
+		random_list = {
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2237
+					days = 768
+				}
+			}
+			50 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2239
+					days = 768
+				}
+			}
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -0.5
+		}
+	}
+	option = {
+		name = ufc_situations.2235.c
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2240
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2236 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2236.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:delhi = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 24
+		}
+		location:delhi = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_medium_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.1
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2237 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2237.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:male_atoll = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:male_atoll = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2239 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2239.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:delhi = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2240 = {
+	type = country_event
+	title = ufc_situations.2240.title
+	desc = ufc_situations.2240.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = ufc_situations.2240.a
+		custom_tooltip = ufc_situations.2240.a.tt
+
+		random_list = {
+			5 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2241
+					days = 1024
+				}
+			}
+			95 = {
+				trigger_event_non_silently = {
+					id = ufc_situations.2244
+					days = 1024
+				}
+			}
+		}
+
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1
+		}
+	}
+
+	option = {
+		name = ufc_situations.2240.b
+		add_prestige = 2.5
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2245
+			days = 256
+		}
+	}
+}
+
+ufc_situations.2241 = {
+	type = country_event
+	title = ufc_situations.2196.title
+	desc = ufc_situations.2241.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		location:minxian = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = EXCELLENT
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 48
+		}
+		location:minxian = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_half_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.5
+				}
+			}
+		}
+	}
+}
+
+ufc_situations.2244 = {
+	type = country_event
+	title = ufc_situations.2199.title
+	desc = ufc_situations.2244.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	immediate = {
+		location:minxian = {
+			save_scope_as = target_location
+		}
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+	option = {
+		name = UNFORTUNATELY
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 0.2
+		}
+	}
+}
+
+ufc_situations.2245 = {
+	type = country_event
+	title = ufc_situations.2245.title
+	desc = ufc_situations.2245.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		location:rosso = {
+			save_scope_as = target_location
+		}
+	}
+
+	option = {
+		name = ufc_situations.2245.a
+		add_sailors = {
+			value = root.monthly_sailors
+			multiply = -12
+		}
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = -1
+		}
+		discover_area = area:nw_africa_coast_area
+		discover_area = area:jolof_area
+		discover_area = area:futa_tooro_area
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2250
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2250 = {
+	type = country_event
+	title = ufc_situations.2250.title
+	desc = ufc_situations.2250.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		location:niani = {
+			save_scope_as = target_location
+		}
+	}
+
+	option = {
+		name = ufc_situations.2250.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 12
+		}
+		location:niani = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2255
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2255 = {
+	type = country_event
+	title = ufc_situations.2255.title
+	desc = ufc_situations.2255.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		location:djenne = {
+			save_scope_as = target_location
+		}
+	}
+
+	option = {
+		name = ufc_situations.2255.a
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 1
+		}
+		location:djenne = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.2255.b
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 1
+		}
+		location:timbuktu = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+	option = {
+		name = ufc_situations.2255.c
+		add_gold = {
+			value = root.monthly_income_trade_and_tax
+			multiply = 1
+		}
+		location:gao = {
+			construct_building = {
+				building_type = building_type:UFC_trade_embassy
+				owner = c:UFC
+				payer = c:UFC
+				cost_multiplier = 0.1
+				cost_multiplier_reason = "game_concept_event"
+				instant = yes
+			}
+		}
+	}
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2260
+			days = 128
+		}
+	}
+}
+
+ufc_situations.2260 = {
+	type = country_event
+	title = ufc_situations.2260.title
+	desc = ufc_situations.2260.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		location:malaga = {
+			save_scope_as = target_location
+		}
+	}
+
+	option = {
+		name = ufc_situations.2260.a
+		custom_tooltip = ufc_situations.2260.a.tt
+		remove_country_modifier = ufc_modifier_slow_expansion
+		character:mor_ibn_battuta = {
+			remove_character_modifier = ufc_modifier_dept_of_love
+		}
+	}
+
+	after = {
+		trigger_event_non_silently = {
+			id = ufc_situations.2265
+			days = 32
+		}
+	}
+}
+
+ufc_situations.2265 = {
+	type = country_event
+	title = ufc_situations.2265.title
+	desc = ufc_situations.2265.desc
+	fire_only_once = yes
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:mor_ibn_battuta = {
+			save_scope_as = target_character
+		}
+		location:malaga = {
+			save_scope_as = target_location
+		}
+	}
+
+	option = {
+		name = ufc_situations.2265.a
+		custom_tooltip = ufc_situations.2265.a.tt
+		location:malaga = {
+			create_art = {
+				quality = 95
+				artist = character:mor_ibn_battuta
+				type = work_of_art_type:novel
+				key = traval_notes_of_ibn_battuta
+			}
+		}
+	}
+
+}
 
 ufc_situations.4000 = {
 	type = country_event
@@ -2998,6 +5711,8 @@ ufc_situations.4000 = {
 		}
 	}
 }
+
+
 
 ufc_situations.4005 = {
 	type = country_event
@@ -3061,6 +5776,17 @@ ufc_situations.4010 = {
 			type = ufc_department_law_academic_department_set
 		}
 		add_policy = policy:ufc_initialize_academic_department
+		custom_tooltip = ufc_modifier_the_aftermath_of_black_death_small_descent
+		hidden_effect = {
+			add_country_modifier = {
+				modifier = ufc_modifier_the_aftermath_of_black_death
+				years = 0
+				mode = add_and_extend
+				size = {
+					subtract = 0.05
+				}
+			}
+		}
 	}
 	after = {
 

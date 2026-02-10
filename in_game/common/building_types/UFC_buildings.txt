@@ -28,7 +28,6 @@ UFC_trade_post = {
 		merchant_capacity_from_building = 0.33
 		local_production_efficiency = 0.05
 	}
-
 	unique_production_methods = {
 		UFC_trade_post_maintenance = {
 			lumber = 0.1
@@ -189,9 +188,20 @@ UFC_raw_material_collection_center = {
 	build_time = workshop_build_time
 
 	modifier = {
-		local_raw_material_output = 0.1
+		local_raw_material_output = 0.2
 	}
-
+	modifier = {
+		local_raw_material_output = 0.1
+		merchant_power_from_building = 2
+		potential_trigger = {
+			c:UFC = {
+				OR = {
+					has_variable = ufc_variable_upgrade_raw_material_collection_center
+					has_fired_unique_event = ufc_situations.2175
+				}
+			}
+		}
+	}
 	raw_modifier = {
 	}
 
@@ -210,4 +220,48 @@ UFC_raw_material_collection_center = {
 			change_max_raw_material_workers = 1
 		}
 	}
+}
+
+UFC_trade_embassy = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = 1
+	need_good_relation = yes
+	pop_type = nobles
+	category = government_category
+	rural_settlement = no
+	town = yes
+	city = yes
+	employment_size = minor_noble_employment
+	country_potential = {
+		modifier:allows_ufc_federation_buildings = yes
+		has_unlocked_building_trigger = {
+			type = UFC_trade_embassy
+		}
+	}
+	allow = {
+
+	}
+	remove_if = {
+
+	}
+
+	build_time = trade_post_build_time
+
+	lifts_fog_of_war = yes
+
+	unique_production_methods = {
+		embassy_requirements = {
+			paper = 1.0
+			jewelry = 0.2
+			category = building_maintenance
+		}
+	}
+
+	foreign_country_modifier = {
+		diplomatic_capacity = 0.1
+		gold_to_building_owner = 0.1
+		merchant_power_from_building = 1
+	}
+
 }

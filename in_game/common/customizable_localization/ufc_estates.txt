@@ -588,9 +588,14 @@ TRY_REPLACE:burghers_estate = {
 	}
 }
 
-clergy_estate = {
+TRY_REPLACE:clergy_estate = {
 	type = country
-
+	text = {
+		localization_key = clergy_estate_ufc_merchant_federation
+		trigger = {
+			has_reform = government_reform:UFC_merchant_federation
+		}
+	}
 	text = {
 		localization_key = clergy_estate_greek
 		trigger = {

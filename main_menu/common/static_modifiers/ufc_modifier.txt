@@ -85,5 +85,13 @@ ufc_modifier_the_aftermath_of_black_death = {
 		decaying = yes
 	}
 	global_production_efficiency = -0.05
-	global_merchant_capacity_modifier = -0.4
+	# global_merchant_capacity_modifier = -0.4
+	trade_income = -0.4
+}
+
+ufc_modifier_free_assign_cabinet = {
+	game_data = {
+		category = country
+	}
+	set_cabinet_member_cost_modifier = -1
 }
