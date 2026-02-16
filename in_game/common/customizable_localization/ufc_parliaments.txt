@@ -4,6 +4,18 @@
 		localization_key = country_flavor_parliament_ufc_parliament_stage1
 		trigger = {
 			tag = UFC
+			country_type = building
+			not = {
+				has_reform = government_reform:UFC_shareholding_system_reform
+			}
+		}
+	}
+
+	text = {
+		localization_key = country_flavor_parliament_ufc_directer_parliament_stage1
+		trigger = {
+			tag = UFC
+			has_reform = government_reform:UFC_shareholding_system_reform
 		}
 	}
 	

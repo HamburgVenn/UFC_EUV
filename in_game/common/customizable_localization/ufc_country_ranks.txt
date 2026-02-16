@@ -4,9 +4,21 @@
 		localization_key = country_rank_ufc_federation
 		trigger = {
 			tag = UFC
-			government_type = government_type:republic
+			country_type = building
+			not = {
+				has_reform = government_reform:UFC_shareholding_system_reform
+			}
 		}
 	}
+
+	text = {
+		localization_key = country_rank_ufc_cooperation
+		trigger = {
+			tag = UFC
+			has_reform = government_reform:UFC_shareholding_system_reform
+		}
+	}
+
 	text = {
 		localization_key = country_rank_people
 		trigger = {

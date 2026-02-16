@@ -265,3 +265,89 @@ UFC_trade_embassy = {
 	}
 
 }
+
+UFC_academic_department_foreign = {
+	is_foreign = yes
+	pop_type = clergy
+	max_levels = 1
+
+	category = cultural_category
+	employment_size = religious_building_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+
+	AI_ignore_available_worker_flag = yes #since we may build this to increase pop promotion we don't want lack of workers to block it
+
+	build_time = cultural_building_time
+
+	allow = {
+		modifier:allows_ufc_federation_buildings = yes
+		owner = {
+			has_unlocked_building_trigger = {
+				type = UFC_academic_department_foreign
+			}
+		}
+	}
+
+	modifier = {
+		local_max_literacy = 10
+		local_pop_conversion_speed = 20
+		local_monthly_literacy = 0.1
+	}
+
+	unique_production_methods = {
+		UFC_academic_department_foreign_maintenance = {
+			paper = 0.25
+			books = 0.1
+			category = building_maintenance
+		}
+	}
+
+	construction_demand = academy_construction
+}
+
+UFC_academic_department = {
+	is_foreign = no
+	pop_type = clergy
+	max_levels = 1
+
+	category = cultural_category
+	employment_size = religious_building_employment
+
+	town = yes
+	city = yes
+	expensive = yes
+	AI_ignore_available_worker_flag = yes #since we may build this to increase pop promotion we don't want lack of workers to block it
+
+	build_time = large_cultural_building_time
+
+	allow = {
+		modifier:allows_ufc_federation_buildings = yes
+		owner = {
+			has_unlocked_building_trigger = {
+				type = UFC_academic_department
+			}
+		}
+	}
+
+	modifier = {
+		local_max_literacy = 15
+		local_pop_conversion_speed = 40
+		local_monthly_literacy = 0.15
+		local_institution_growth_modifier = 0.5
+		research_speed_modifier = 0.0025
+	}
+
+	unique_production_methods = {
+		UFC_academic_department_maintenance = {
+			paper = 0.5
+			books = 0.25
+			glass = 0.25
+			category = building_maintenance
+		}
+	}
+
+	construction_demand = academy_construction
+}

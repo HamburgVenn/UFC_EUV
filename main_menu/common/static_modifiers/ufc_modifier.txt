@@ -95,3 +95,22 @@ ufc_modifier_free_assign_cabinet = {
 	}
 	set_cabinet_member_cost_modifier = -1
 }
+
+ufc_modifier_double_time_double_pay = {
+	game_data = {
+		category = character
+	}
+	country_cabinet_efficiency = -0.1
+	character_cabinet_efficiency = -0.1
+	court_spending_cost = -0.05
+}
+
+ufc_modifier_promote_consumerism = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+	estate_enrichment = -0.10
+	global_pop_silver_demand = 0.05
+	global_estate_target_satisfaction = -0.05
+}

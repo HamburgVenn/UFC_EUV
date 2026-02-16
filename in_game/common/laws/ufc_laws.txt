@@ -45,7 +45,21 @@ ufc_monetary_law = {
 		}
 		years = 2
 	}
-
+	ufc_gold_standard_exchange_rate = {
+		country_modifier = {
+			trade_income = 0.1
+			diplomatic_reputation = -1
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+		potential = {
+			has_unlocked_policy_trigger = {
+				type = ufc_gold_standard_exchange_rate
+			}
+		}
+	}
 }
 
 ufc_department_law_academic_department_set = {
@@ -58,7 +72,7 @@ ufc_department_law_academic_department_set = {
 	ufc_initialize_academic_department = {
 		country_modifier = {
 			global_max_literacy = 2.5
-			monthly_towards_innovative = societal_value_minor_monthly_move
+			monthly_towards_innovative = societal_value_tiny_monthly_move
 		}
 		estate_preferences = {
 			clergy_estate
@@ -68,7 +82,20 @@ ufc_department_law_academic_department_set = {
 
 	ufc_ban_academic_department = {
 		country_modifier = {
-			monthly_towards_traditionalist = societal_value_minor_monthly_move
+			monthly_towards_traditionalist = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+	}
+
+	ufc_start_academic_department = {
+		country_modifier = {
+			court_spending_cost = 0.015
+			research_speed_modifier = 0.1
+			global_max_literacy = 5
+			monthly_towards_innovative = societal_value_minor_monthly_move
 		}
 		estate_preferences = {
 			peasants_estate
@@ -86,8 +113,8 @@ ufc_department_law_human_resource_set = {
 
 	ufc_initialize_human_resource_department = {
 		country_modifier = {
-			global_pop_promotion_speed_modifier = 0.1
-			monthly_towards_free_subjects = societal_value_minor_monthly_move
+			global_pop_promotion_speed_modifier = 0.05
+			monthly_towards_free_subjects = societal_value_tiny_monthly_move
 		}
 		estate_preferences = {
 			burghers_estate peasants_estate
@@ -97,10 +124,45 @@ ufc_department_law_human_resource_set = {
 
 	ufc_ban_human_resource_department = {
 		country_modifier = {
+			monthly_towards_serfdom = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	ufc_start_human_resource_department = {
+		country_modifier = {
+			court_spending_cost = 0.015
+			global_pop_promotion_speed_modifier = 0.1
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
 			monthly_towards_serfdom = societal_value_minor_monthly_move
 		}
 		estate_preferences = {
 			nobles_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:distribution_of_power_law = {
+	UFC_board_director_meeting = {
+		potential = {
+			has_unlocked_policy_trigger = {
+				type = UFC_board_director_meeting
+			}
+		}
+		country_modifier = {
+			government_size = 1
+			global_crown_estate_power = 0.20
+			global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+			parliament_base_support = 0.2
+			nobles_estate_agenda_impact = -0.1
+			clergy_estate_agenda_impact = -0.1
+		}
+		estate_preferences = {
+			crown_estate
 		}
 		years = 2
 	}
